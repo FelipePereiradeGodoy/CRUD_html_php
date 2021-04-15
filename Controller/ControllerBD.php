@@ -1,17 +1,13 @@
 <?php
-    
-    class bdMysql {
-        private $dsn ;
-        private $user ;
-        private $password ;
+    require_once("../Model/ConexaoMysql");
+
+    class ClControllerBD{
         private $pdo ;
         private $stmt ;
 
-        function __construct() {
-            $this->dsn = "mysql:host=localhost;dbname=Crud";
-            $this->user = "root";
-            $this->password = "";
-            $this->pdo = new PDO($this->dsn ,$this->user, $this->password);
+        function __constructor(){
+            ClConexaoMysql $conexao = new ClConexaoMysql();
+            $this->pdo = $conexao.retornaPDO();
         }
 
         function inserirCliente($c){
@@ -60,5 +56,4 @@
             }
         }
     }
-
 ?>
