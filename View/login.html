@@ -7,7 +7,7 @@
     <title>Login</title>
 </head>
 <body>
-    <form action="login.php" method="GET">
+    <form action="Controller/recebeLogin.php" method="POST">
         <caption>Login</caption>
         
         <div class="input-block">
@@ -20,7 +20,7 @@
             <input type="password" name="senha" id="senha" placeholder="minhaSenha123">
         </div>
 
-        <button type="submit">Entrar</button>
+        <button type="submit" name="entrar" id="entrar" value="true">Entrar</button>
     </form>
 </body>
 </html>
