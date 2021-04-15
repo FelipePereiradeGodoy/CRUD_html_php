@@ -4,23 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    
     <title>Login</title>
 </head>
 <body>
-    <form action="Controller/recebeLogin.php" method="POST">
-        <caption>Login</caption>
+    <div id="caixa-login">
+        <form action="Controller/recebeLogin.php" method="POST">
+            <caption>Login</caption>
         
-        <div class="input-block">
-            <label for="usuario">Usuario:</label>
-            <input type="text" name="usuario" id="login" placeholder="user.teste">
-        </div>
+            <div class="input-block">
+                <label for="usuario">Usuario:</label>
+                <input type="text" name="usuario" id="login" placeholder="user.teste">
+            </div>
 
-        <div class="input-block">
-            <label for="senha">Senha:</label>
-            <input type="password" name="senha" id="senha" placeholder="minhaSenha123">
-        </div>
+            <div class="input-block">
+                <label for="senha">Senha:</label>
+                <input type="password" name="senha" id="senha" placeholder="minhaSenha123">
+            </div>
 
-        <button type="submit" name="entrar" id="entrar" value="true">Entrar</button>
-    </form>
+            <button type="submit" name="entrar" id="entrar" value="true">Entrar</button>
+        </form>
+    </div>
 </body>
 </html>
