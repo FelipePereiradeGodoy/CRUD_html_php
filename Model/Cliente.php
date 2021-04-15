@@ -1,14 +1,17 @@
 <?php
-    class ClCliente {
-        private $nome;
-        private $cpf;
-        private $rg;
-        private $email;
-        private $endereco;
-        private $telefone1;
-        private $telefone2;
-        private $dataNasc;
+    class Cliente {
+        public $nome;
+        public $cpf;
+        public $rg;
+        public $email;
+        public $endereco;
+        public $telefone1;
+        public $telefone2;
+        public $dataNasc;
 
+        public function __construct(){
+            
+        }
 
     }
 ?>

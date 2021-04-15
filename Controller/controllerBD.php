@@ -1,16 +1,16 @@
 <?php
-    require_once("../Model/ConexaoMysql");
+    require '/opt/lampp/htdocs/CRUD_html_php/Model/ConexaoMysql.php';
 
-    class ClControllerBD{
+    class ControllerBD{
         private $pdo ;
         private $stmt ;
 
-        function __constructor(){
-            ClConexaoMysql $conexao = new ClConexaoMysql();
-            $this->pdo = $conexao.retornaPDO();
+        public function __construct(){
+            $conexao = new ConexaoMysql;
+            $this->pdo = $conexao->retornaPDO();
         }
 
-        function inserirCliente($c){
+        public function inserirCliente($c){
             $this->stmt = $this->pdo->prepare(" INSERT INTO 
                                                 Cliente 
                                                 ( 
@@ -21,17 +21,17 @@
                                                 )
                                                 VALUES
                                                 (
-                                                  '$c->nome', '$c->cpf', '$c->rg', 
-                                                  '$c->email', '$c->endereco'
-                                                  '$c->telefone1', '$c->telefone2',
-                                                  '$c->dataNasc'  
+                                                  ?, ?, ?,
+                                                  ?, ?,
+                                                  ?, ?,
+                                                  ?
                                                 )
                                                 ");
-            $this->execute();
-            echo "REALIZADO INSERÇÃO!";
+            
+            $this->stmt->execute([ $c->nome, $c->cpf, $c->rg, $c->email, $c->endereco, $c->telefone1, $c->telefone2, $c->dataNasc ]);
         }
 
-        function retornaClientes(){
+        public function retornaClientes(){
             foreach($this->pdo->query("SELECT * FROM Cliente") as $row){
                 print $row['nome'] . "\t";
                 print $row['cpf'] . "\t";
@@ -44,7 +44,7 @@
             }
         }
 
-        function verificaLoginSenha($login, $senha){
+        public function verificaLoginSenha($login, $senha){
             foreach($this->pdo->query(" SELECT senha from LoginSenha
                                         WHERE login IN ('$login');") as $row){
                  $verifica = $row['senha'];
