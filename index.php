@@ -1,3 +1,3 @@
 <?php
-    include_once("View/login.html");
+    header("Location: https://localhost/CRUD_html_php/View/login.html");
 ?>
