@@ -30,7 +30,7 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 7px;
-    background-color: rgba(250, 250, 250, 1)
+    background-color: rgba(250, 250, 250, 1);
 }
 
 .page-cadastro form .input-block{
@@ -183,3 +183,7 @@ body {
 /*==========================================================================================*/
 /*======================PAGINA LISTA DE CLIENTES- bloco de busca ===========================*/
 /*==========================================================================================*/
+
+.page-lista-cliente tbody tr{
+    border: 10px solid black;
+}
