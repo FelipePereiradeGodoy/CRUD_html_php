@@ -134,6 +134,52 @@ body {
 /*======================PAGINA LISTA DE CLIENTES============================================*/
 /*==========================================================================================*/
 
-#corpo-tabela{
+#corpo-tabela {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    align-content: center;
+}
+
+.page-lista-cliente {
+    border-color: black;
+    border-left: 5px;
+    border-top: 5px;
+    border-bottom: 5px;
+    border-right: 5px;
+    border-style: solid;
+    width: 90vw;
+    height: 70%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
     
 }
+
+.page-lista-cliente thead {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 4px solid black;
+}
+
+.page-lista-cliente thead tr {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.page-lista-cliente thead tr th {
+    width: 100%;
+    font-size: 12pt;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1.5px solid black;
+
+}
+
+
+/*==========================================================================================*/
+/*======================PAGINA LISTA DE CLIENTES- bloco de busca ===========================*/
+/*==========================================================================================*/
