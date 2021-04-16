@@ -37,14 +37,14 @@
 
         public function retornaClientes(){
             foreach($this->pdo->query("SELECT * FROM Cliente") as $row){
-                print $row['nome'] . "\t";
-                print $row['cpf'] . "\t";
-                print $row['rg'] . "\t";
-                print $row['email'] . "\t";
-                print $row['endereco'] . "\t";
-                print $row['telefone1'] . "\t";
-                print $row['telefone2'] . "\t";
-                print $row['dataNasc'] . "\t";    
+                echo $row['nome'];
+                echo $row['cpf'];
+                echo $row['rg'];
+                echo $row['email'];
+                echo $row['endereco'];
+                echo $row['telefone1'];
+                echo $row['telefone2'];
+                echo $row['dataNasc'];    
             }
         }
 
