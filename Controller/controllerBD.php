@@ -1,12 +1,16 @@
 <?php
-    require '/opt/lampp/htdocs/CRUD_html_php/Model/ConexaoMysql.php';
+    namespace Controller;
+
+    use \Model\ConexaoMysql;
+
 
     class ControllerBD{
         private $pdo ;
         private $stmt ;
+        private $conexao;
 
         public function __construct(){
-            $conexao = new ConexaoMysql;
+            $this->conexao = new ConexaoMysql;
             $this->pdo = $conexao->retornaPDO();
         }
 
@@ -27,7 +31,8 @@
                                                   ?
                                                 )
                                                 ");
-            
+
+            $c->dataNasc = date('Y-m-d H:i:s');
             $this->stmt->execute([ $c->nome, $c->cpf, $c->rg, $c->email, $c->endereco, $c->telefone1, $c->telefone2, $c->dataNasc ]);
         }
 

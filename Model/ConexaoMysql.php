@@ -1,15 +1,15 @@
 <?php
-    
+    namespace Model;
+
+    use \PDO;
+
     class ConexaoMysql {
-        private $dsn ;
-        private $user ;
-        private $password ;
+        const dsn = "mysql:host=localhost;dbname=CRUD";
+        private user = "root";
+        private password = "";
         private $pdo ;
 
         public function __construct() {
-            $this->dsn = "mysql:host=localhost;dbname=CRUD";
-            $this->user = "root";
-            $this->password = "";
             $this->pdo = new PDO($this->dsn ,$this->user, $this->password);
         }
 
