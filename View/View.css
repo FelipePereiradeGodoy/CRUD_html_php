@@ -1,0 +1,139 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    background: orange;
+}
+
+.corpo-centro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*==========================================================================================*/
+/*==================================PAGINA CADASTRO=========================================*/
+/*==========================================================================================*/
+
+.page-cadastro{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-cadastro form {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    background-color: rgba(250, 250, 250, 1)
+}
+
+.page-cadastro form .input-block{
+    width: 90%;
+    height: 11%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+.page-cadastro form .input-block label{
+    font: italic 12pt;
+    margin-bottom: 2px;
+    width: 95%;
+}
+
+.page-cadastro form .input-block input{
+    width: 90%;
+}
+
+.page-cadastro form button {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-start;
+    margin-left: 7%;
+    margin-top: 2%;
+    border-radius: 10px;
+    background-color: rgba(0, 300, 0, 0.8);
+}
+
+.page-cadastro form button:hover{
+    background-color: rgba(0, 200, 0, 1);
+}
+/*==========================================================================================*/
+/*=================================PAGINA DE LOGIN==========================================*/
+/*==========================================================================================*/
+
+.page-login{
+    width: 40vw;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-login form {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    background-color: rgba(250, 250, 250, 1)
+}
+
+
+.page-login form .input-block{
+    width: 90%;
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+.page-login form .input-block label{
+    font: italic 12pt;
+    margin-bottom: 2px;
+    width: 95%;
+}
+
+.page-login form .input-block input{
+    width: 90%;
+}
+
+.page-login form button {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-start;
+    margin-left: 7%;
+    margin-top: 2%;
+    border-radius: 10px;
+    background-color: rgba(0, 300, 0, 0.8);
+}
+
+.page-login form button:hover{
+    background-color: rgba(0, 200, 0, 1);
+}
+
+/*==========================================================================================*/
+/*======================PAGINA LISTA DE CLIENTES============================================*/
+/*==========================================================================================*/
+
+#corpo-tabela{
+    
+}

@@ -1,4 +1,5 @@
 <?php
+
     $login = $_POST['login'];
     $senha = $_POST['senha'];
     $entrar = $_POST['entrar'];
@@ -8,5 +9,5 @@
     //    $control->verificaLoginSenha($login, $senha);
     //}
 
-    header("Location: ../View/cadastroCliente.html");
+    header("Location: https://localhost/CRUD_html_php/View/cadastroCliente.html");
 ?>

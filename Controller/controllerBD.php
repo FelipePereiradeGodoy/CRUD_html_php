@@ -1,8 +1,7 @@
 <?php
-    namespace Controller;
-
-    use \Model\ConexaoMysql;
-
+    
+    $path = $_SERVER['DOCUMENT_ROOT'];
+    require($path.'/CRUD_html_php/Model/ConexaoMysql.php');
 
     class ControllerBD{
         private $pdo ;
@@ -11,7 +10,7 @@
 
         public function __construct(){
             $this->conexao = new ConexaoMysql;
-            $this->pdo = $conexao->retornaPDO();
+            $this->pdo = $this->conexao->retornaPDO();
         }
 
         public function inserirCliente($c){

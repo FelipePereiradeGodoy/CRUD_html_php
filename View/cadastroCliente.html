@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="cadastroCliente.css">
+    <link rel="stylesheet" href="View.css">
 
     <title>Cadastro Cliente</title>
 </head>
-<body>
-    <div id="caixa-form">
-        <form action="\Controller\recebeCadastroCliente.php" method="POST">
+<body class="corpo-centro"> 
+    <div class="page-cadastro">
+        <form action="../Controller/recebeCadastroCliente.php" method="POST">
         
             <div class="input-block">
                 <label for="nome">Nome Completo:</label>
@@ -57,7 +57,7 @@
             <div class="input-block">
                 <label for="dataNasc">Data Nascimento:</label>
                 <br>
-                <input type="datetime" name="dataNascimento" id="dataNascimento">
+                <input type="date" name="dataNascimento" id="dataNascimento">
             </div>
 
             <br>
