@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="View.css">
-    
+
     <title>Lista Clientes</title>
+
+    <link rel="stylesheet" href="listaCliente.css">
+    <link rel="stylesheet" href="listaClienteCss.php" media="screen">
 </head>
-<body id="corpo-tabela">
-    <div class="bloco-busca-lista">
+
+<body>
+    <div class="menu">
 
     </div>
 
-    <table class="page-lista-cliente">
+    <table>
         <thead>
             <tr>
                 <th>Identificador</th>
@@ -25,10 +30,17 @@
                 <th>Data Nascimento</th>
             </tr>
         </thead>
-            
+
         <tbody>
-            
+            <?php
+            require 'Controller/controllerBD.php';
+
+            $control = new ControllerBD;
+            $control->retornaClientes();
+            ?>
         </tbody>
+
     </table>
 </body>
+
 </html>

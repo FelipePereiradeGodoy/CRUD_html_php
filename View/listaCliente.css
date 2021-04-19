@@ -17,6 +17,13 @@ table{
 table thead{
     width: 100%;
     height: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+table thead tr {
+    display: flex;
+    align-items: center;
 }
 
 table tbody{
@@ -33,3 +40,4 @@ table tbody{
     border: 1px solid red;
     align-self: center;
 }
+
