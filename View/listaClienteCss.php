@@ -7,11 +7,29 @@ header("Content-type: text/css");
 ?>
 
 .tr-lista-clientes{
-border: solid 10px black;
-background: blue
+width:100%;
+height:15%;
+display:flex;
+justify-content: space-around;
+align-items: center;
 }
 
+
 .td-lista-clientes{
-border: solid 10px black;
+width:10%;
+display:flex;
+align-items: center;
+justify-content: center;
+}
+
+button{
+border-radius: 7px;
+}
+
+#button-update {
+background: blue;
+}
+
+#button-delete{
 background: red;
 }

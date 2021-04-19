@@ -50,6 +50,8 @@ class ControllerBD
             echo "<td class='td-lista-clientes'>" . $row['telefone1'] . "</th>";
             echo "<td class='td-lista-clientes'>" . $row['telefone2'] . "</th>";
             echo "<td class='td-lista-clientes'>" . $row['dataNasc'] . "</th>";
+            echo "<td class='td-lista-clientes'><button id='button-update'>Editar</button></th>";
+            echo "<td class='td-lista-clientes'><button id='button-delete'>Excluir</button></th>";
             echo "</tr>";
         }
     }

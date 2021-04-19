@@ -19,7 +19,6 @@
     <table>
         <thead>
             <tr>
-                <th>Identificador</th>
                 <th>Nome</th>
                 <th>CPF</th>
                 <th>RG</th>
@@ -28,12 +27,14 @@
                 <th>Telefone 1</th>
                 <th>Telefone 2</th>
                 <th>Data Nascimento</th>
+                <th>Editar</th>
+                <th>Excluir</th>
             </tr>
         </thead>
 
         <tbody>
             <?php
-            require 'Controller/controllerBD.php';
+            require '../Controller/controllerBD.php';
 
             $control = new ControllerBD;
             $control->retornaClientes();
