@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,10 +9,12 @@
 
     <title>Cadastro Cliente</title>
 </head>
-<body class="corpo-centro"> 
+
+<body class="corpo-centro">
     <div class="page-cadastro">
         <form action="../Controller/recebeCadastroCliente.php" method="POST">
-        
+            <input type="hidden" name="idCliente" id="idCliente" value="">
+
             <div class="input-block">
                 <label for="nome">Nome Completo:</label>
                 <br>
@@ -23,7 +26,7 @@
                 <br>
                 <input type="text" name="cpf" id="cpf">
             </div>
-        
+
             <div class="input-block">
                 <label for="rg">RG:</label>
                 <br>
@@ -65,4 +68,5 @@
         </form>
     </div>
 </body>
+
 </html>

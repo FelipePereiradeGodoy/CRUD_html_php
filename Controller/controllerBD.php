@@ -38,10 +38,29 @@ class ControllerBD
         $this->stmt->execute([$c->nome, $c->cpf, $c->rg, $c->email, $c->endereco, $c->telefone1, $c->telefone2, $c->dataNasc]);
     }
 
-    public function retornaClientes()
+    public function alterarCliente($c)
     {
-        foreach ($this->pdo->query("SELECT * FROM Cliente") as $row) {
+        $this->stmt = $this->pdo->prepare(" UPDATE Cliente 
+                                                set nome = ?,
+                                                set cpf = ?, 
+                                                set rg = ?, 
+                                                set email = ?, 
+                                                set endereco = ?,
+                                                set telefone1 = ?, 
+                                                set telefone2 = ?, 
+                                                set dataNasc = ?
+                                            WHERE idCliente = ?
+                                         ");
+
+        $c->dataNasc = date('Y-m-d H:i:s');
+        $this->stmt->execute([$c->nome, $c->cpf, $c->rg, $c->email, $c->endereco, $c->telefone1, $c->telefone2, $c->dataNasc, $c->idCliente]);
+    }
+
+    public function retornaClientes($where)
+    {
+        foreach ($this->pdo->query("SELECT * FROM Cliente " . $where) as $row) {
             echo "<tr class='tr-lista-clientes'>";
+            echo "<td style='display:none;' id='idCliente' >" . $row['idCliente'] . "</th>";
             echo "<td class='td-lista-clientes'>" . $row['nome'] . "</th>";
             echo "<td class='td-lista-clientes'>" . $row['cpf'] . "</th>";
             echo "<td class='td-lista-clientes'>" . $row['rg'] . "</th>";
@@ -50,11 +69,12 @@ class ControllerBD
             echo "<td class='td-lista-clientes'>" . $row['telefone1'] . "</th>";
             echo "<td class='td-lista-clientes'>" . $row['telefone2'] . "</th>";
             echo "<td class='td-lista-clientes'>" . $row['dataNasc'] . "</th>";
-            echo "<td class='td-lista-clientes'><button id='button-update'>Editar</button></th>";
-            echo "<td class='td-lista-clientes'><button id='button-delete'>Excluir</button></th>";
+            echo "<td class='td-lista-clientes'><button class='btn btn-secondary' id='btnAzul' type='button'><a id='btn-editar' href='https://localhost/CRUD_html_php/Controller/editarClientes.php'>Editar</a></button></th>";
+            echo "<td class='td-lista-clientes'><button class='btn btn-warning' id='btnAmarelo' type='button' onclick='desativarCliente()' >Desativar</button></th>";
             echo "</tr>";
         }
     }
+
 
     public function verificaLoginSenha($login, $senha)
     {

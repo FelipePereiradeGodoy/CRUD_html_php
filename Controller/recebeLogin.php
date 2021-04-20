@@ -9,5 +9,4 @@
     //    $control->verificaLoginSenha($login, $senha);
     //}
 
-    header("Location: https://localhost/CRUD_html_php/View/cadastroCliente.html");
-?>
+    header("Location: https://localhost/CRUD_html_php/View/listaClientes.php");

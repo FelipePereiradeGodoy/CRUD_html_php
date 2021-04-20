@@ -1,0 +1,46 @@
+nav {
+    background: orange !important;
+}
+
+nav div a {
+    background: #228B22;
+    border-radius:5px;
+    padding: 5px;
+    
+}
+
+nav div a:hover {
+    background: #32CD32;
+}
+
+.table {
+    background-color: white  !important;
+}
+
+#btnAzul {
+    background-color:#87CEFA;
+}
+
+#btnAzul:hover{
+    background-color: #00BFFF;
+}
+
+#btnAmarelo{
+    background-color:#FFFF00;
+}
+
+#btnAmarelo:hover{
+    background-color:#FFD700;
+}
+
+#btnBuscar{
+    background-color:#00FFFF;
+}
+
+#btnBuscar:hover{
+    background-color:#40E0D0;
+}
+
+#btn-editar{
+    text-decoration: none;
+}
