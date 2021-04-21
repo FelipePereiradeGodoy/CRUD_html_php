@@ -73,7 +73,7 @@ class ControllerBD
             echo "<td class='td-lista-clientes'>" . $row['telefone2'] . "</th>";
             echo "<td class='td-lista-clientes'>" . $row['dataNasc'] . "</th>";
             echo "<td class='td-lista-clientes'><button class='btn btn-secondary' id='btnAzul' type='button'><a id='btn-editar' href='https://localhost/CRUD_html_php/Controller/editarClientes.php'>Editar</a></button></th>";
-            echo "<td class='td-lista-clientes'><button class='btn btn-warning' id='btnAmarelo' type='button' onclick='desativarCliente()' >Desativar</button></th>";
+            echo "<td class='td-lista-clientes'><button class='btn btn-danger' id='btnVermelho' type='button' >Excluir</button></th>";
             echo "</tr>";
         }
     }
