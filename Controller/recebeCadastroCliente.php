@@ -1,8 +1,12 @@
 <?php
 
-$path = $_SERVER['DOCUMENT_ROOT'];
-require($path . '/CRUD_html_php/Model/Cliente.php');
-require($path . '/CRUD_html_php/Controller/controllerBD.php');
+//$path = $_SERVER['DOCUMENT_ROOT']; //UBUNTU
+//require($path . '/CRUD_html_php/Model/Cliente.php'); //UBUNTU
+//require($path . '/CRUD_html_php/Controller/controllerBD.php');  //UBUNTU
+
+$_DIR = $_SERVER['DOCUMENT_ROOT'];//WINDOWS
+require($_DIR . "/GitHub_ProjetoWeb/CRUD_html_php/Model/Cliente.php"); //WINDOWS
+require($_DIR . "/GitHub_ProjetoWeb/CRUD_html_php/Controller/controllerBD.php"); //WINDOWS
 
 $c = new Cliente;
 
@@ -24,4 +28,5 @@ else
     $control->inserirCliente($c);
 
 
-header("Location: https://localhost/CRUD_html_php/View/listaClientes.php");
+//header("Location: https://localhost/CRUD_html_php/View/listaClientes.php");//UBUNTU
+header("Location: http://localhost/GitHub_ProjetoWeb/CRUD_html_php/View/listaClientes.php"); //Windows

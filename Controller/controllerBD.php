@@ -1,7 +1,10 @@
 <?php
 
-$path = $_SERVER['DOCUMENT_ROOT'];
-require($path . '/CRUD_html_php/Model/ConexaoMysql.php');
+//$path = $_SERVER['DOCUMENT_ROOT']; UBUNTU
+//require($path . '/CRUD_html_php/Model/ConexaoMysql.php');//UBUNTU
+
+$_DIR = $_SERVER['DOCUMENT_ROOT'];//WINDOWS
+require($_DIR . "/GitHub_ProjetoWeb/CRUD_html_php/Model/ConexaoMysql.php"); //WINDOWS
 
 class ControllerBD
 {
