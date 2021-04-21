@@ -10,6 +10,7 @@
         public $telefone1;
         public $telefone2;
         public $dataNasc;
+        public $isAtivo;
 
         public function __construct(){
             

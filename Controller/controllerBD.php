@@ -20,25 +20,30 @@ class ControllerBD
 
     public function inserirCliente($c)
     {
+        try{
+        
         $this->stmt = $this->pdo->prepare(" INSERT INTO 
                                                 Cliente 
                                                 ( 
                                                   nome, cpf, rg, 
                                                   email, endereco,
                                                   telefone1, telefone2, 
-                                                  dataNasc
+                                                  dataNasc, isAtivo
                                                 )
                                                 VALUES
                                                 (
                                                   ?, ?, ?,
                                                   ?, ?,
                                                   ?, ?,
-                                                  ?
+                                                  ?, ?
                                                 )
                                                 ");
 
         $c->dataNasc = date('Y-m-d H:i:s');
-        $this->stmt->execute([$c->nome, $c->cpf, $c->rg, $c->email, $c->endereco, $c->telefone1, $c->telefone2, $c->dataNasc]);
+        $this->stmt->execute([$c->nome, $c->cpf, $c->rg, $c->email, $c->endereco, $c->telefone1, $c->telefone2, $c->dataNasc, $c->isAtivo]);
+        } catch (Exception $Exception){
+            echo $Exception->getMessage( );
+        }
     }
 
     public function alterarCliente($c)
@@ -52,11 +57,12 @@ class ControllerBD
                                                 set telefone1 = ?, 
                                                 set telefone2 = ?, 
                                                 set dataNasc = ?
+                                                set ativo = ?
                                             WHERE idCliente = ?
                                          ");
 
         $c->dataNasc = date('Y-m-d H:i:s');
-        $this->stmt->execute([$c->nome, $c->cpf, $c->rg, $c->email, $c->endereco, $c->telefone1, $c->telefone2, $c->dataNasc, $c->idCliente]);
+        $this->stmt->execute([$c->nome, $c->cpf, $c->rg, $c->email, $c->endereco, $c->telefone1, $c->telefone2, $c->dataNasc, $c->idCliente, $c->isAtivo]);
     }
 
     public function retornaClientes($where)
@@ -72,6 +78,7 @@ class ControllerBD
             echo "<td class='td-lista-clientes'>" . $row['telefone1'] . "</th>";
             echo "<td class='td-lista-clientes'>" . $row['telefone2'] . "</th>";
             echo "<td class='td-lista-clientes'>" . $row['dataNasc'] . "</th>";
+            echo "<td class='td-lista-clientes'>" . $row['isAtivo'] . "</th>";
             echo "<td class='td-lista-clientes'><button class='btn btn-secondary' id='btnAzul' type='button'><a id='btn-editar' href='https://localhost/CRUD_html_php/Controller/editarClientes.php'>Editar</a></button></th>";
             echo "<td class='td-lista-clientes'><button class='btn btn-danger' id='btnVermelho' type='button' >Excluir</button></th>";
             echo "</tr>";

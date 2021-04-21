@@ -37,6 +37,7 @@
                 <th>Telefone 1</th>
                 <th>Telefone 2</th>
                 <th>Data Nascimento</th>
+                <th>Ativo</th>
                 <th>Editar</th>
                 <th>Desativar</th>
             </tr>
