@@ -1,6 +1,6 @@
 function novoEndereco() {
     let idCliente = document.getElementById('idCliente').value;
-    window.location.href = `https://localhost/CRUD_html_php/View/novoEndereco.phpid=${idCliente}`; //UBUNTU
+    window.location.href = `https://localhost/CRUD_html_php/View/novoEndereco.php?id=${idCliente}`; //UBUNTU
 }
 
 function editarEndereco(idCliente) {
