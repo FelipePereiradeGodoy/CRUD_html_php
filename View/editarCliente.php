@@ -113,7 +113,7 @@
 
             <div class="col-sm-10 offset-sm-2" id="div-row-mb-3">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="isAtivo" id="isAtivo" <?php echo $cliente->isAtivo = 1 ? 'checked' : ''; ?>>
+                    <input class="form-check-input" type="checkbox" name="isAtivo" id="isAtivo" <?php echo $cliente->isAtivo == 1 ? 'checked' : ''; ?>>
                     <label class="form-check-label" for="gridCheck1">
                         Cliente Ativo
                     </label>
