@@ -1,14 +1,14 @@
 <?php
 
-//$path = $_SERVER['DOCUMENT_ROOT']; //UBUNTU
-//require($path . '/CRUD_html_php/Model/Cliente.php'); //UBUNTU
-//require($path . '/CRUD_html_php/Controller/controllerBD.php');  //UBUNTU
+$path = $_SERVER['DOCUMENT_ROOT']; //UBUNTU
+require($path . '/CRUD_html_php/Model/Cliente.php'); //UBUNTU
+require($path . '/CRUD_html_php/Controller/controllerBD.php');  //UBUNTU
 
-$_DIR = $_SERVER['DOCUMENT_ROOT'];//WINDOWS
-require($_DIR . "/GitHub_ProjetoWeb/CRUD_html_php/Model/Cliente.php"); //WINDOWS
-require($_DIR . "/GitHub_ProjetoWeb/CRUD_html_php/Controller/controllerBD.php"); //WINDOWS
+//$_DIR = $_SERVER['DOCUMENT_ROOT'];//WINDOWS
+//require($_DIR . "/GitHub_ProjetoWeb/CRUD_html_php/Model/Cliente.php"); //WINDOWS
+//require($_DIR . "/GitHub_ProjetoWeb/CRUD_html_php/Controller/controllerBD.php"); //WINDOWS
 
-if(isset($_POST['isAtivo'])) 
+if (isset($_POST['isAtivo']))
     $ativo = 1;
 else
     $ativo = 0;
@@ -31,8 +31,8 @@ $control = new controllerBD;
 //if ($idCliente !== null && "")
 //    $control->alterarCliente($c);
 //else
-    $control->inserirCliente($c);
+$control->inserirCliente($c);
 
 
-//header("Location: https://localhost/CRUD_html_php/View/listaClientes.php");//UBUNTU
-header("Location: http://localhost/GitHub_ProjetoWeb/CRUD_html_php/View/listaClientes.php"); //Windows
+header("Location: https://localhost/CRUD_html_php/View/listaClientes.php");//UBUNTU
+//header("Location: http://localhost/GitHub_ProjetoWeb/CRUD_html_php/View/listaClientes.php"); //Windows

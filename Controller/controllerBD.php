@@ -1,10 +1,10 @@
 <?php
 
-//$path = $_SERVER['DOCUMENT_ROOT']; UBUNTU
-//require($path . '/CRUD_html_php/Model/ConexaoMysql.php');//UBUNTU
+$path = $_SERVER['DOCUMENT_ROOT']; //UBUNTU
+require($path . '/CRUD_html_php/Model/ConexaoMysql.php'); //UBUNTU
 
-$_DIR = $_SERVER['DOCUMENT_ROOT'];//WINDOWS
-require($_DIR . "/GitHub_ProjetoWeb/CRUD_html_php/Model/ConexaoMysql.php"); //WINDOWS
+//$_DIR = $_SERVER['DOCUMENT_ROOT'];//WINDOWS
+//require($_DIR . "/GitHub_ProjetoWeb/CRUD_html_php/Model/ConexaoMysql.php"); //WINDOWS
 
 class ControllerBD
 {
@@ -20,9 +20,9 @@ class ControllerBD
 
     public function inserirCliente($c)
     {
-        try{
-        
-        $this->stmt = $this->pdo->prepare(" INSERT INTO 
+        try {
+
+            $this->stmt = $this->pdo->prepare(" INSERT INTO 
                                                 Cliente 
                                                 ( 
                                                   nome, cpf, rg, 
@@ -39,10 +39,10 @@ class ControllerBD
                                                 )
                                                 ");
 
-        $c->dataNasc = date('Y-m-d H:i:s');
-        $this->stmt->execute([$c->nome, $c->cpf, $c->rg, $c->email, $c->endereco, $c->telefone1, $c->telefone2, $c->dataNasc, $c->isAtivo]);
-        } catch (Exception $Exception){
-            echo $Exception->getMessage( );
+            $c->dataNasc = date('Y-m-d H:i:s');
+            $this->stmt->execute([$c->nome, $c->cpf, $c->rg, $c->email, $c->endereco, $c->telefone1, $c->telefone2, $c->dataNasc, $c->isAtivo]);
+        } catch (Exception $Exception) {
+            echo $Exception->getMessage();
         }
     }
 

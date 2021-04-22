@@ -44,11 +44,11 @@
         </thead>
         <tbody>
             <?php
-            //require '../Controller/controllerBD.php'; //UBUNTU
+            require '../Controller/controllerBD.php'; //UBUNTU
 
-            $_DIR = $_SERVER['DOCUMENT_ROOT'];//WINDOWS
-            require($_DIR . "/GitHub_ProjetoWeb/CRUD_html_php/Controller/controllerBD.php"); //WINDOWS
-            
+            //$_DIR = $_SERVER['DOCUMENT_ROOT'];//WINDOWS
+            //require($_DIR . "/GitHub_ProjetoWeb/CRUD_html_php/Controller/controllerBD.php"); //WINDOWS
+
             $control = new ControllerBD;
             $control->retornaClientes($where);
             ?>
