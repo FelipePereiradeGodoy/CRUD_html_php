@@ -2,6 +2,8 @@
 
 $path = $_SERVER['DOCUMENT_ROOT']; //UBUNTU
 require($path . '/CRUD_html_php/Model/ConexaoMysql.php'); //UBUNTU
+require($path . '/CRUD_html_php/Model/Cliente.php'); //UBUNTU
+
 
 //$_DIR = $_SERVER['DOCUMENT_ROOT'];//WINDOWS
 //require($_DIR . "/GitHub_ProjetoWeb/CRUD_html_php/Model/ConexaoMysql.php"); //WINDOWS
@@ -46,7 +48,7 @@ class ControllerBD
         }
     }
 
-    public function alterarCliente($c)
+    public function alterarCliente($c, $idCliente)
     {
         $this->stmt = $this->pdo->prepare(" UPDATE Cliente 
                                                 set nome = ?,
@@ -62,7 +64,7 @@ class ControllerBD
                                          ");
 
         $c->dataNasc = date('Y-m-d H:i:s');
-        $this->stmt->execute([$c->nome, $c->cpf, $c->rg, $c->email, $c->endereco, $c->telefone1, $c->telefone2, $c->dataNasc, $c->idCliente, $c->isAtivo]);
+        $this->stmt->execute([$c->nome, $c->cpf, $c->rg, $c->email, $c->endereco, $c->telefone1, $c->telefone2, $c->dataNasc, $c->isAtivo, $idCliente]);
     }
 
     public function retornaClientes($where)
@@ -70,6 +72,7 @@ class ControllerBD
         foreach ($this->pdo->query("SELECT * FROM Cliente " . $where) as $row) {
             echo "<tr class='tr-lista-clientes'>";
             echo "<td style='display:none;' id='idCliente' >" . $row['idCliente'] . "</th>";
+            $id = $row['idCliente'];
             echo "<td class='td-lista-clientes'>" . $row['nome'] . "</th>";
             echo "<td class='td-lista-clientes'>" . $row['cpf'] . "</th>";
             echo "<td class='td-lista-clientes'>" . $row['rg'] . "</th>";
@@ -79,10 +82,29 @@ class ControllerBD
             echo "<td class='td-lista-clientes'>" . $row['telefone2'] . "</th>";
             echo "<td class='td-lista-clientes'>" . $row['dataNasc'] . "</th>";
             echo "<td class='td-lista-clientes'>" . $row['isAtivo'] . "</th>";
-            echo "<td class='td-lista-clientes'><button class='btn btn-secondary' id='btnAzul' type='button'><a id='btn-editar' href='https://localhost/CRUD_html_php/Controller/editarClientes.php'>Editar</a></button></th>";
+            echo "<td class='td-lista-clientes'><button class='btn btn-warning' id='btnAmarelo' type='button' onclick='editarCliente($id)'>Editar</button></th>";
             echo "<td class='td-lista-clientes'><button class='btn btn-danger' id='btnVermelho' type='button' >Excluir</button></th>";
             echo "</tr>";
         }
+    }
+
+    public function retornaUmCliente($where)
+    {
+        $cliente = new Cliente;
+
+        foreach ($this->pdo->query("SELECT * FROM Cliente " . $where) as $row) {
+            $cliente->nome = $row['nome'];
+            $cliente->cpf = $row['cpf'];
+            $cliente->rg = $row['rg'];
+            $cliente->email = $row['email'];
+            $cliente->endereco = $row['endereco'];
+            $cliente->telefone1 = $row['telefone1'];
+            $cliente->telefone2 = $row['telefone2'];
+            $cliente->dataNasc = $row['dataNasc'];
+            $cliente->isAtivo = $row['isAtivo'];
+        }
+
+        return $cliente;
     }
 
 

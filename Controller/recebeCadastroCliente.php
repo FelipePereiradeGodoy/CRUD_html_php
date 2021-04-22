@@ -25,14 +25,14 @@ $c->telefone1 = $_POST['telefone1'];
 $c->telefone2 = $_POST['telefone2'];
 $c->dataNasc = $_POST['dataNasc'];
 $c->isAtivo = $ativo;
-
+echo $idCliente;
 $control = new controllerBD;
 
 //if ($idCliente !== null && "")
-//    $control->alterarCliente($c);
+//    $control->alterarCliente($c, $idCliente);
 //else
 $control->inserirCliente($c);
 
 
-header("Location: https://localhost/CRUD_html_php/View/listaClientes.php");//UBUNTU
+//header("Location: https://localhost/CRUD_html_php/View/listaClientes.php");//UBUNTU
 //header("Location: http://localhost/GitHub_ProjetoWeb/CRUD_html_php/View/listaClientes.php"); //Windows

@@ -8,20 +8,33 @@
     <link rel="stylesheet" href="cadastroCliente.css">
 
     <title>Cadastro Cliente</title>
+
+    <?php
+
+    require '../Controller/controllerBD.php'; //UBUNTU
+
+    $id = $_GET['id'];
+    $control = new ControllerBD;
+
+    $where = "WHERE idCliente = " . $id;
+    $cliente = $control->retornaUmCliente($where);
+
+    ?>
+
 </head>
 
 <body>
 
     <form id="form-block" action="../Controller/recebeCadastroCliente.php" method="POST">
         <div id="form-center">
-            <input type="hidden" name="idCliente" id="idCliente" value="">
+            <input type="hidden" name="idCliente" id="idCliente" value="<?php echo $id ?>">
 
             <div class="row mb-3" id="div-row-mb-3">
 
                 <label for="nome">Nome Completo:</label>
 
                 <div class="col-sm-10">
-                    <input type="text" name="nome" id="nome" class="inputText">
+                    <input type="text" name="nome" id="nome" class="inputText" value="<?php echo $cliente->nome; ?>">
                 </div>
 
             </div>
@@ -31,7 +44,7 @@
                 <label for="cpf">CPF:</label>
 
                 <div class="col-sm-10">
-                    <input type="text" name="cpf" id="cpf" class="inputText">
+                    <input type="text" name="cpf" id="cpf" class="inputText" value="<?php echo $cliente->cpf; ?>">
                 </div>
 
             </div>
@@ -41,7 +54,7 @@
                 <label for="rg">RG:</label>
 
                 <div class="col-sm-10">
-                    <input type="text" name="rg" id="rg" class="inputText">
+                    <input type="text" name="rg" id="rg" class="inputText" value=" <?php echo $cliente->rg; ?>">
                 </div>
 
             </div>
@@ -51,7 +64,7 @@
                 <label for="email">Email:</label>
 
                 <div class="col-sm-10">
-                    <input type="text" name="email" id="email" class="inputText">
+                    <input type="text" name="email" id="email" class="inputText" value="<?php echo $cliente->email; ?>">
                 </div>
 
             </div>
@@ -61,7 +74,7 @@
                 <label for="endereco">Endereço:</label>
 
                 <div class="col-sm-10">
-                    <input type="text" name="endereco" id="endereco" class="inputText">
+                    <input type="text" name="endereco" id="endereco" class="inputText" value="<?php echo $cliente->endereco; ?>">
                 </div>
 
             </div>
@@ -71,7 +84,7 @@
                 <label for="telefone1">Telefone 1:</label>
 
                 <div class="col-sm-10">
-                    <input type="text" name="telefone1" id="telefone1" class="inputText">
+                    <input type="text" name="telefone1" id="telefone1" class="inputText" value="<?php echo $cliente->telefone1; ?>">
                 </div>
 
             </div>
@@ -81,7 +94,7 @@
                 <label for="telefone2">Telefone 2:</label>
 
                 <div class="col-sm-10">
-                    <input type="text" name="telefone2" id="telefone2" class="inputText">
+                    <input type="text" name="telefone2" id="telefone2" class="inputText" value="<?php echo $cliente->telefone2; ?>">
                 </div>
 
             </div>
@@ -91,14 +104,14 @@
                 <label for="dataNasc">Data Nascimento:</label>
 
                 <div class="col-sm-10">
-                    <input type="date" name="dataNasc" id="dataNasc">
+                    <input type="date" name="dataNasc" id="dataNasc" value="<?php echo $cliente->dataNasc; ?>">
                 </div>
 
             </div>
 
             <div class="col-sm-10 offset-sm-2" id="div-row-mb-3">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="isAtivo" id="isAtivo" checked>
+                    <input class="form-check-input" type="checkbox" name="isAtivo" id="isAtivo" <?php echo $cliente->isAtivo = 1 ? 'checked' : ''; ?>>
                     <label class="form-check-label" for="gridCheck1">
                         Cliente Ativo
                     </label>
