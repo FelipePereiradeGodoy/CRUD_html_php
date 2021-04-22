@@ -2,7 +2,6 @@
 
 $path = $_SERVER['DOCUMENT_ROOT']; //UBUNTU
 require($path . '/CRUD_html_php/Model/ConexaoMysql.php'); //UBUNTU
-require($path . '/CRUD_html_php/Model/Cliente.php'); //UBUNTU
 
 
 //$_DIR = $_SERVER['DOCUMENT_ROOT'];//WINDOWS
@@ -14,11 +13,13 @@ class ControllerBD
     private $stmt;
     private $conexao;
 
+
     public function __construct()
     {
         $this->conexao = new ConexaoMysql;
         $this->pdo = $this->conexao->retornaPDO();
     }
+
 
     public function inserirCliente($c)
     {
@@ -48,23 +49,27 @@ class ControllerBD
         }
     }
 
-    public function alterarCliente($c, $idCliente)
+    public function alterarCliente($c)
     {
-        $this->stmt = $this->pdo->prepare(" UPDATE Cliente 
-                                                set nome = ?,
-                                                set cpf = ?, 
-                                                set rg = ?, 
-                                                set email = ?, 
-                                                set endereco = ?,
-                                                set telefone1 = ?, 
-                                                set telefone2 = ?, 
-                                                set dataNasc = ?
-                                                set ativo = ?
-                                            WHERE idCliente = ?
-                                         ");
+        try {
+            $this->stmt = $this->pdo->prepare(" UPDATE Cliente 
+                                                 set   
+                                                 nome = ?, 
+                                                 cpf = ?,
+                                                 rg = ?,
+                                                 email = ?,
+                                                 endereco = ?,
+                                                 telefone1 = ?,
+                                                 telefone2 = ?,
+                                                 dataNasc = ?,
+                                                 isAtivo = ?
 
-        $c->dataNasc = date('Y-m-d H:i:s');
-        $this->stmt->execute([$c->nome, $c->cpf, $c->rg, $c->email, $c->endereco, $c->telefone1, $c->telefone2, $c->dataNasc, $c->isAtivo, $idCliente]);
+                                             WHERE idCliente = ?
+                                          ");
+            $this->stmt->execute([$c->nome, $c->cpf, $c->rg, $c->email, $c->endereco, $c->telefone1, $c->telefone2, $c->dataNasc, $c->isAtivo, $c->idCliente]);
+        } catch (PDOException $erro) {
+            echo $erro;
+        }
     }
 
     public function retornaClientes($where)

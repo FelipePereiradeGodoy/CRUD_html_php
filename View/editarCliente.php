@@ -12,9 +12,11 @@
     <?php
 
     require '../Controller/controllerBD.php'; //UBUNTU
+    include('../Model/Cliente.php');
 
     $id = $_GET['id'];
     $control = new ControllerBD;
+    $cliente = new Cliente;
 
     $where = "WHERE idCliente = " . $id;
     $cliente = $control->retornaUmCliente($where);
