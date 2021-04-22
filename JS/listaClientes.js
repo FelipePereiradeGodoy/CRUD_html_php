@@ -7,3 +7,7 @@ function novoCliente() {
 function editarCliente(idCliente) {
     window.location.href = `https://localhost/CRUD_html_php/View/editarCliente.php?id=${idCliente}`; //UBUNTU
 }
+
+function pageEndereco(idCliente) {
+    window.location.href = `https://localhost/CRUD_html_php/View/listaEndereco.php?id=${idCliente}`; //UBUNTU
+}

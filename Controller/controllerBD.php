@@ -29,7 +29,7 @@ class ControllerBD
                                                 Cliente 
                                                 ( 
                                                   nome, cpf, rg, 
-                                                  email, endereco,
+                                                  email,
                                                   telefone1, telefone2, 
                                                   dataNasc, isAtivo
                                                 )
@@ -43,7 +43,7 @@ class ControllerBD
                                                 ");
 
             $c->dataNasc = date('Y-m-d H:i:s');
-            $this->stmt->execute([$c->nome, $c->cpf, $c->rg, $c->email, $c->endereco, $c->telefone1, $c->telefone2, $c->dataNasc, $c->isAtivo]);
+            $this->stmt->execute([$c->nome, $c->cpf, $c->rg, $c->email, $c->telefone1, $c->telefone2, $c->dataNasc, $c->isAtivo]);
         } catch (Exception $Exception) {
             echo $Exception->getMessage();
         }
@@ -58,7 +58,6 @@ class ControllerBD
                                                  cpf = ?,
                                                  rg = ?,
                                                  email = ?,
-                                                 endereco = ?,
                                                  telefone1 = ?,
                                                  telefone2 = ?,
                                                  dataNasc = ?,
@@ -66,7 +65,7 @@ class ControllerBD
 
                                              WHERE idCliente = ?
                                           ");
-            $this->stmt->execute([$c->nome, $c->cpf, $c->rg, $c->email, $c->endereco, $c->telefone1, $c->telefone2, $c->dataNasc, $c->isAtivo, $c->idCliente]);
+            $this->stmt->execute([$c->nome, $c->cpf, $c->rg, $c->email, $c->telefone1, $c->telefone2, $c->dataNasc, $c->isAtivo, $c->idCliente]);
         } catch (PDOException $erro) {
             echo $erro;
         }
@@ -82,11 +81,11 @@ class ControllerBD
             echo "<td class='td-lista-clientes'>" . $row['cpf'] . "</th>";
             echo "<td class='td-lista-clientes'>" . $row['rg'] . "</th>";
             echo "<td class='td-lista-clientes'>" . $row['email'] . "</th>";
-            echo "<td class='td-lista-clientes'>" . $row['endereco'] . "</th>";
             echo "<td class='td-lista-clientes'>" . $row['telefone1'] . "</th>";
             echo "<td class='td-lista-clientes'>" . $row['telefone2'] . "</th>";
             echo "<td class='td-lista-clientes'>" . $row['dataNasc'] . "</th>";
             echo "<td class='td-lista-clientes'>" . $row['isAtivo'] . "</th>";
+            echo "<td class='td-lista-clientes'><button class='btn btn-secondary' id='btnGray' type='button' onclick='pageEndereco($id)'>Loc</button></th>";
             echo "<td class='td-lista-clientes'><button class='btn btn-warning' id='btnAmarelo' type='button' onclick='editarCliente($id)'>Editar</button></th>";
             echo "<td class='td-lista-clientes'><button class='btn btn-danger' id='btnVermelho' type='button' >Excluir</button></th>";
             echo "</tr>";
@@ -102,7 +101,6 @@ class ControllerBD
             $cliente->cpf = $row['cpf'];
             $cliente->rg = $row['rg'];
             $cliente->email = $row['email'];
-            $cliente->endereco = $row['endereco'];
             $cliente->telefone1 = $row['telefone1'];
             $cliente->telefone2 = $row['telefone2'];
             $cliente->dataNasc = $row['dataNasc'];
@@ -110,6 +108,45 @@ class ControllerBD
         }
 
         return $cliente;
+    }
+
+    public function inserirEndereco($end)
+    {
+        try {
+            $this->stmt = $this->pdo->prepare(" INSERT INTO 
+                                                Endereco 
+                                                ( 
+                                                  cep, rua, bairro, numero
+                                                )
+                                                VALUES
+                                                (
+                                                  ?, ?, ?, ?
+                                                )
+                                                WHERE idCliente = ?
+                                            ");
+
+            $this->stmt->execute([$end->cep, $end->rua, $end->bairro, $end->numero, $end->idCliente]);
+        } catch (PDOException $erro) {
+            echo $erro;
+        }
+    }
+
+    public function printEnderecos($where)
+    {
+
+        foreach ($this->pdo->query("SELECT * FROM Endereco " . $where) as $row) {
+            echo "<tr class='tr-lista-enderecos'>";
+            echo "<td style='display:none;' id='idEndereco' >" . $row['idEndereco'] . "</th>";
+            $id = $row['idEndereco'];
+            echo "<td class='td-lista-enderecos'>" . $row['cep'] .        "</th>";
+            echo "<td class='td-lista-enderecos'>" . $row['rua'] .        "</th>";
+            echo "<td class='td-lista-enderecos'>" . $row['bairro'] .     "</th>";
+            echo "<td class='td-lista-enderecos'>" . $row['numero'] .     "</th>";
+            echo "<td class='td-lista-enderecos'>" . $row['idCliente'] .  "</th>";
+            echo "<td class='td-lista-clientes'><button class='btn btn-warning' id='btnAmarelo' type='button' onclick='editarEndereco($id)'>Editar</button></th>";
+            echo "<td class='td-lista-clientes'><button class='btn btn-danger' id='btnVermelho' type='button' >Excluir</button></th>";
+            echo "</tr>";
+        }
     }
 
 
