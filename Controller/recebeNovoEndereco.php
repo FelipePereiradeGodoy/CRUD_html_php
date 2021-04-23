@@ -15,4 +15,4 @@ $control = new ControllerBD;
 
 $control->inserirEndereco($end);
 
-header("Location: https://localhost/CRUD_html_php/View/listaEndereco.php");//UBUNTU
+header("Location: https://localhost/CRUD_html_php/View/page-lista-endereco/listaEndereco.php");//UBUNTU

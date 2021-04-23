@@ -9,5 +9,5 @@ $entrar = $_POST['entrar'];
 //    $control->verificaLoginSenha($login, $senha);
 //}
 
-header("Location: https://localhost/CRUD_html_php/View/listaClientes.php"); //Ubuntu
+header("Location: https://localhost/CRUD_html_php/View/page-lista-clientes/listaClientes.php"); //Ubuntu
     //header("Location: http://localhost/GitHub_ProjetoWeb/CRUD_html_php/View/listaClientes.php"); //Windows
