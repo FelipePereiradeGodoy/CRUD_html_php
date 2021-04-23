@@ -87,7 +87,7 @@ class ControllerBD
             echo "<td class='td-lista-clientes'>" . $row['isAtivo'] . "</th>";
             echo "<td class='td-lista-clientes'><button class='btn btn-secondary' id='btnGray' type='button' onclick='pageEndereco($id)'>Loc</button></th>";
             echo "<td class='td-lista-clientes'><button class='btn btn-warning' id='btnAmarelo' type='button' onclick='editarCliente($id)'>Editar</button></th>";
-            echo "<td class='td-lista-clientes'><button class='btn btn-danger' id='btnVermelho' type='button' >Excluir</button></th>";
+            echo "<td class='td-lista-clientes'><button class='btn btn-danger' id='btnVermelho' type='button' onclick='excluirCliente($id)'>Excluir</button></th>";
             echo "</tr>";
         }
     }
@@ -108,6 +108,19 @@ class ControllerBD
         }
 
         return $cliente;
+    }
+
+    public function excluirCliente($idCliente)
+    {
+        try {
+            $this->stmt = $this->pdo->prepare(" DELETE
+                                                FROM Cliente
+                                                WHERE idCliente = ?
+                                             ");
+            $this->stmt->execute([$idCliente]);
+        } catch (PDOException $erro) {
+            echo $erro;
+        }
     }
 
     public function inserirEndereco($end)
@@ -190,6 +203,19 @@ class ControllerBD
                                                 WHERE idCliente = ? AND idEndereco = ?
                                           ");
             $this->stmt->execute([$end->cep, $end->rua, $end->bairro, $end->numero, $end->idCliente, $end->idEndereco]);
+        } catch (PDOException $erro) {
+            echo $erro;
+        }
+    }
+
+    public function excluirEndereco($idEndereco)
+    {
+        try {
+            $this->stmt = $this->pdo->prepare(" DELETE 
+                                                FROM Endereco
+                                                WHERE idEndereco = ?
+                                             ");
+            $this->stmt->execute([$idEndereco]);
         } catch (PDOException $erro) {
             echo $erro;
         }

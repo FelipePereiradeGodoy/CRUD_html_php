@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="View.css">
 
     <title>Endereço</title>
 
@@ -17,11 +16,17 @@
 </head>
 
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-orange">
-        <input type="hidden" name="idCliente" id="idCliente" value="<?php echo $id ?>">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#" onclick="novoEndereco()">Novo Endereço</a>
+            <a class="navbar-brand" href="#" onclick="voltarListaCliente()">
+                <img id='imgSetaEsquerda' src="../../img/arrow-left-square.svg" alt="Seta indicando para voltar">
+            </a>
+
+
+            <input type="hidden" name="idCliente" id="idCliente" value="<?php echo $id ?>">
+            <div id="btn-block">
+                <a class="navbar-brand" href="#" id="btn-novo-endereco" onclick="novoEndereco()">Novo Endereço</a>
+            </div>
         </div>
     </nav>
 
