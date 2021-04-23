@@ -11,10 +11,9 @@ $end->rua = $_POST['rua'];
 $end->bairro = $_POST['bairro'];
 $end->numero = $_POST['numero'];
 $end->idCliente = $_POST['idCliente'];
-echo "idCliente: " . $end->idCliente . "<br>";
 
 $control = new ControllerBD;
 
 $control->inserirEndereco($end);
 
-header("Location: https://localhost/CRUD_html_php/View/page-lista-endereco/listaEndereco.php");//UBUNTU
+header("Location: https://localhost/CRUD_html_php/View/page-lista-endereco/listaEndereco.php" . "?id=" . $end->idCliente);//UBUNTU
