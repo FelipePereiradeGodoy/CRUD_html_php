@@ -11,8 +11,8 @@
 
     <?php
 
-    require '../Controller/controllerBD.php'; //UBUNTU
-    include('../Model/Cliente.php');
+    require '../../Controller/controllerBD.php'; //UBUNTU
+    include('../../Model/Cliente.php');
 
     $id = $_GET['id'];
     $control = new ControllerBD;
@@ -27,7 +27,7 @@
 
 <body>
 
-    <form id="form-block" action="../Controller/recebeCadastroCliente.php" method="POST">
+    <form id="form-block" action="../../Controller/recebeCadastroCliente.php" method="POST">
         <div id="form-center">
             <input type="hidden" name="idCliente" id="idCliente" value="<?php echo $id ?>">
 

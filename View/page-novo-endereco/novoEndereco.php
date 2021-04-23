@@ -17,7 +17,7 @@
 
 <body id="body-form">
 
-    <form action="../Controller/recebeNovoEndereco.php" method="POST" id="form-block">
+    <form action="../../Controller/recebeNovoEndereco.php" method="POST" id="form-block">
 
         <input type="hidden" name="idCliente" id="idCliente" value="<?php echo $id ?>">
 
