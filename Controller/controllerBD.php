@@ -153,12 +153,45 @@ class ControllerBD
                 echo "<td class='td-lista-enderecos'>" . $row['bairro'] .     "</th>";
                 echo "<td class='td-lista-enderecos'>" . $row['numero'] .     "</th>";
                 $idCliente = $row['idCliente'];
-                echo "<td class='td-lista-clientes'><button class='btn btn-warning' id='btnAmarelo' type='button' onclick='editarEndereco($idEndereco)'>Editar</button></th>";
-                echo "<td class='td-lista-clientes'><button class='btn btn-danger' id='btnVermelho' type='button' >Excluir</button></th>";
+                echo "<td class='td-lista-clientes'><button class='btn btn-warning' id='btnAmarelo' type='button' onclick='editarEndereco($idEndereco, $idCliente)'>Editar</button></th>";
+                echo "<td class='td-lista-clientes'><button class='btn btn-danger' id='btnVermelho' type='button' onclick='excluirEndereco($idEndereco, $idCliente)'>Excluir</button></th>";
                 echo "</tr>";
             }
         } catch (PDOException $erro) {
             echo $erro . "<br>";
+        }
+    }
+
+    public function retornaUmEndereco($where)
+    {
+        $end = new Endereco;
+
+        foreach ($this->pdo->query("SELECT * FROM Endereco " . $where) as $row) {
+            $end->idEndereco = $row['idEndereco'];
+            $end->cep = $row['cep'];
+            $end->rua = $row['rua'];
+            $end->bairro = $row['bairro'];
+            $end->numero = $row['numero'];
+            $end->idCliente = $row['idCliente'];
+        }
+
+        return $end;
+    }
+
+    public function alterarEndereco($end)
+    {
+        try {
+            $this->stmt = $this->pdo->prepare(" UPDATE Endereco 
+                                                 set   
+                                                 cep = ?, 
+                                                 rua = ?,
+                                                 bairro = ?,
+                                                 numero = ?
+                                                WHERE idCliente = ? AND idEndereco = ?
+                                          ");
+            $this->stmt->execute([$end->cep, $end->rua, $end->bairro, $end->numero, $end->idCliente, $end->idEndereco]);
+        } catch (PDOException $erro) {
+            echo $erro;
         }
     }
 

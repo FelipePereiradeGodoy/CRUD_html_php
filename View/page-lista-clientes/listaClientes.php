@@ -18,9 +18,9 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="#" onclick="novoCliente()">Novo Cliente</a>
 
-            <form class="d-flex" action="busca.php" method="POST">
+            <form class="d-flex" action="../page-busca/busca.php" method="POST">
                 <input class="form-control me-2" id='inputBuscar' name='inputBuscar' type="search" placeholder="Nome do Cliente" aria-label="Search">
-                <button class="btn btn-outline-success" id='btnBuscar' name='btnBuscar' type="submit" onclick="buscarCliente()">Buscar</button>
+                <button class="btn btn-outline-success" id='btnBuscar' name='btnBuscar' type="submit">Buscar</button>
             </form>
         </div>
         </div>

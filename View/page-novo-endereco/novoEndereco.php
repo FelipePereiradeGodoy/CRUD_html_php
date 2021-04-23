@@ -20,6 +20,7 @@
     <form action="../../Controller/recebeNovoEndereco.php" method="POST" id="form-block">
 
         <input type="hidden" name="idCliente" id="idCliente" value="<?php echo $id; ?>">
+        <input type="hidden" name="idEndereco" id="idEndereco" value="">
 
         <label for="cep" class="label-input">CEP:</label>
         <input type="text" name="cep" id="cep" class="input-label">
