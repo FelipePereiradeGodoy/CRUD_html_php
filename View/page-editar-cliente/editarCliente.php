@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="cadastroCliente.css">
+    <link rel="stylesheet" href="../page-cadastro-clientes/cadastroCliente.css">
 
     <title>Cadastro Cliente</title>
 
@@ -29,7 +29,7 @@
 
     <form id="form-block" action="../../Controller/recebeCadastroCliente.php" method="POST">
         <div id="form-center">
-            <input type="hidden" name="idCliente" id="idCliente" value="<?php echo $id ?>">
+            <input type="hidden" name="idCliente" id="idCliente" value="<?php echo $id; ?>">
 
             <div class="row mb-3" id="div-row-mb-3">
 

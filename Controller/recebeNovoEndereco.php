@@ -3,6 +3,7 @@
 include('../Model/Endereco.php');
 include('../Controller/controllerBD.php');
 
+
 $end = new Endereco;
 
 $end->cep = $_POST['cep'];
@@ -10,6 +11,7 @@ $end->rua = $_POST['rua'];
 $end->bairro = $_POST['bairro'];
 $end->numero = $_POST['numero'];
 $end->idCliente = $_POST['idCliente'];
+echo "idCliente: " . $end->idCliente . "<br>";
 
 $control = new ControllerBD;
 

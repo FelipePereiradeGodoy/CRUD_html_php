@@ -41,8 +41,10 @@
             <?php
             require '../../Controller/controllerBD.php'; //UBUNTU
 
-            $where = $id;
-            $control->retornaEnderecos($where);
+            $control = new ControllerBD;
+            $where = "WHERE Endereco.idCliente = " . $id;
+
+            $control->printEnderecos($where);
             ?>
         </tbody>
     </table>

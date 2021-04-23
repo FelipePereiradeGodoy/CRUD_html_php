@@ -116,13 +116,12 @@ class ControllerBD
             $this->stmt = $this->pdo->prepare(" INSERT INTO 
                                                 Endereco 
                                                 ( 
-                                                  cep, rua, bairro, numero
+                                                  cep, rua, bairro, numero, idCliente
                                                 )
                                                 VALUES
                                                 (
-                                                  ?, ?, ?, ?
+                                                  ?, ?, ?, ?, ?
                                                 )
-                                                WHERE idCliente = ?
                                             ");
 
             $this->stmt->execute([$end->cep, $end->rua, $end->bairro, $end->numero, $end->idCliente]);
@@ -133,19 +132,33 @@ class ControllerBD
 
     public function printEnderecos($where)
     {
+        try {
+            foreach ($this->pdo->query("SELECT 
+                                            Cliente.nome, Endereco.idEndereco,
+                                            Endereco.cep, Endereco.rua,
+                                            Endereco.bairro, Endereco.numero,
+                                            Endereco.idCliente
+                                        FROM Endereco 
+                                        INNER JOIN 
+                                            Cliente ON Cliente.idCliente = Endereco.idCliente
+                                        $where    
+                                       ") as $row) {
 
-        foreach ($this->pdo->query("SELECT * FROM Endereco " . $where) as $row) {
-            echo "<tr class='tr-lista-enderecos'>";
-            echo "<td style='display:none;' id='idEndereco' >" . $row['idEndereco'] . "</th>";
-            $id = $row['idEndereco'];
-            echo "<td class='td-lista-enderecos'>" . $row['cep'] .        "</th>";
-            echo "<td class='td-lista-enderecos'>" . $row['rua'] .        "</th>";
-            echo "<td class='td-lista-enderecos'>" . $row['bairro'] .     "</th>";
-            echo "<td class='td-lista-enderecos'>" . $row['numero'] .     "</th>";
-            echo "<td class='td-lista-enderecos'>" . $row['idCliente'] .  "</th>";
-            echo "<td class='td-lista-clientes'><button class='btn btn-warning' id='btnAmarelo' type='button' onclick='editarEndereco($id)'>Editar</button></th>";
-            echo "<td class='td-lista-clientes'><button class='btn btn-danger' id='btnVermelho' type='button' >Excluir</button></th>";
-            echo "</tr>";
+                echo "<tr class='tr-lista-enderecos'>";
+                echo "<td style='display:none;' id='idEndereco' >" . $row['idEndereco'] . "</th>";
+                $idEndereco = $row['idEndereco'];
+                echo "<td class='td-lista-enderecos'>" . $row['nome'] .        "</th>";
+                echo "<td class='td-lista-enderecos'>" . $row['cep'] .        "</th>";
+                echo "<td class='td-lista-enderecos'>" . $row['rua'] .        "</th>";
+                echo "<td class='td-lista-enderecos'>" . $row['bairro'] .     "</th>";
+                echo "<td class='td-lista-enderecos'>" . $row['numero'] .     "</th>";
+                $idCliente = $row['idCliente'];
+                echo "<td class='td-lista-clientes'><button class='btn btn-warning' id='btnAmarelo' type='button' onclick='editarEndereco($idEndereco)'>Editar</button></th>";
+                echo "<td class='td-lista-clientes'><button class='btn btn-danger' id='btnVermelho' type='button' >Excluir</button></th>";
+                echo "</tr>";
+            }
+        } catch (PDOException $erro) {
+            echo $erro . "<br>";
         }
     }
 
