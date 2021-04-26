@@ -246,14 +246,15 @@ class ControllerBD
 
     public function verificaLoginSenha($usuario, $senha)
     {
-        foreach ($this->pdo->query(" SELECT senha FROM Funcionario
+        foreach ($this->pdo->query(" SELECT senha, isAdm FROM Funcionario
                                         WHERE usuario IN ('$usuario')") as $row) {
             $verifica = $row['senha'];
+            $isAdm = $row['isAdm'];
         }
         if (password_verify($senha, $verifica)) {
-            return 1;
+            return [1, $isAdm];
         } else {
-            return 0;
+            return [0, 0];
         }
     }
 }
