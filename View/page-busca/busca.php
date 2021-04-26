@@ -4,11 +4,17 @@
 <head>
     <?php
     session_start();
+    $adm = 0;
 
     if ($_SESSION['usuarioValido'] !== 1) {
         unset($_SESSION['usuarioValido']);
         unset($_SESSION['isAdm']);
         header("Location: https://localhost/CRUD_html_php/View/page-login/login.html");
+    } else {
+        if ($_SESSION['isAdm'] == 1)
+            $adm = 1;
+
+        $idFuncionario = $_SESSION['idFuncionario'];
     }
 
     ?>
@@ -24,7 +30,10 @@
 
     <?php
     $nome = $_POST['inputBuscar'];
-    $where = "WHERE nome LIKE '" . $nome . "%'";
+    if ($adm == 1)
+        $where = "WHERE nome LIKE '" . $nome . "%'";
+    else
+        $where = "WHERE nome LIKE '" . $nome . "%' AND idFuncionario = " . $idFuncionario;
     ?>
 </head>
 
@@ -51,6 +60,7 @@
                 <th>Data Nascimento</th>
                 <th>Editar</th>
                 <th>Desativar</th>
+                <?php if ($adm) echo "<th>Excluir</th>" ?>
             </tr>
         </thead>
         <tbody>
@@ -61,7 +71,7 @@
             //require($_DIR . "/GitHub_ProjetoWeb/CRUD_html_php/Controller/controllerBD.php"); //WINDOWS
 
             $control = new ControllerBD;
-            $control->retornaClientes($where);
+            $control->retornaClientes($where, $adm);
             ?>
         </tbody>
     </table>

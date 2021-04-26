@@ -1,0 +1,20 @@
+
+PAGINA DE CADASTRO DE CLIENTES
+    CENTRALIZAR/ALINHAR OS ITENS DO FORM
+    Adicionar botão de voltar
+
+PAGINA DE LISTA DE CLIENTES
+    Adicionar mais filtros para as buscas;
+    Adicionar botão de sair do sistemas;
+
+PAGINA DE CADASTRO DE ENDERECO
+    Deixar o form mais bonito
+    Adicionar botao de voltar
+
+PAGINA DE EDITAR CLIENTES
+    Adicionar botao de voltar
+    Centralizar/ALinhar itens do FORM
+
+PAGINA DE CADASTRO DE FUNCIONARIO
+    Substituir botao voltar por Seta Rosa
+    Ajustar Radio button para quando clicado dnv desmarcar

@@ -12,6 +12,7 @@ class Cliente
     public $telefone2;
     public $dataNasc;
     public $isAtivo;
+    public $idFuncionario;
 
     public function __construct()
     {

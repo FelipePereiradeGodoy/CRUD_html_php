@@ -32,14 +32,13 @@ class ControllerBD
     public function inserirCliente($c)
     {
         try {
-
             $this->stmt = $this->pdo->prepare(" INSERT INTO 
                                                 Cliente 
                                                 ( 
                                                   nome, cpf, rg, 
-                                                  email,
+                                                  email, 
                                                   telefone1, telefone2, 
-                                                  dataNasc, isAtivo
+                                                  dataNasc, isAtivo, idFuncionario
                                                 )
                                                 VALUES
                                                 (
@@ -51,9 +50,9 @@ class ControllerBD
                                                 ");
 
             $c->dataNasc = date('Y-m-d H:i:s');
-            $this->stmt->execute([$c->nome, $c->cpf, $c->rg, $c->email, $c->telefone1, $c->telefone2, $c->dataNasc, $c->isAtivo]);
-        } catch (Exception $Exception) {
-            echo $Exception->getMessage();
+            $this->stmt->execute([$c->nome, $c->cpf, $c->rg, $c->email, $c->telefone1, $c->telefone2, $c->dataNasc, $c->isAtivo, $c->idFuncionario]);
+        } catch (PDOException $erro) {
+            echo $erro;
         }
     }
 

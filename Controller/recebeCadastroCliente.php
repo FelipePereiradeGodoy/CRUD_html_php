@@ -4,12 +4,16 @@ session_start();
 if ($_SESSION['usuarioValido'] !== 1) {
     unset($_SESSION['usuarioValido']);
     unset($_SESSION['isAdm']);
+    unset($_SESSION['idFuncionario']);
+
     header("Location: https://localhost/CRUD_html_php/View/page-login/login.html");
 }
+
 
 $path = $_SERVER['DOCUMENT_ROOT']; //UBUNTU
 require($path . '/CRUD_html_php/Model/Cliente.php'); //UBUNTU
 require($path . '/CRUD_html_php/Controller/controllerBD.php');  //UBUNTU
+
 
 //$_DIR = $_SERVER['DOCUMENT_ROOT'];//WINDOWS
 //require($_DIR . "/GitHub_ProjetoWeb/CRUD_html_php/Model/Cliente.php"); //WINDOWS
@@ -33,13 +37,15 @@ $c->telefone1 = $_POST['telefone1'];
 $c->telefone2 = $_POST['telefone2'];
 $c->dataNasc = $_POST['dataNasc'];
 $c->isAtivo = $ativo;
+$c->idFuncionario = intval($_SESSION['idFuncionario']);
 
 $control = new controllerBD;
 
-if ($c->idCliente !== null ||  $c->idCliente = "")
-    $control->alterarCliente($c);
-else
+if ($c->idCliente == null ||  $c->idCliente = "")
     $control->inserirCliente($c);
+else
+    $control->alterarCliente($c);
+
 
 
 header("Location: https://localhost/CRUD_html_php/View/page-lista-clientes/listaClientes.php");//UBUNTU
