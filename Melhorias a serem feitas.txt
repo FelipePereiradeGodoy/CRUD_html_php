@@ -1,7 +1,7 @@
 
 PAGINA DE CADASTRO DE CLIENTES
-    CENTRALIZAR/ALINHAR OS ITENS DO FORM
-    Adicionar botão de voltar
+    CENTRALIZAR/ALINHAR OS ITENS DO FORM -- FEITO
+    Adicionar botão de voltar --- FEITO
 
 PAGINA DE LISTA DE CLIENTES
     Adicionar mais filtros para as buscas;
@@ -18,3 +18,6 @@ PAGINA DE EDITAR CLIENTES
 PAGINA DE CADASTRO DE FUNCIONARIO
     Substituir botao voltar por Seta Rosa
     Ajustar Radio button para quando clicado dnv desmarcar
+
+PAGINA DE BUSCA DE CLIENTES
+    Adicionar mais filtros
