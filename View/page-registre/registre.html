@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="registre.css">
+
+    <title>Registre-se</title>
+</head>
+
+<body>
+    <div class="page-registre">
+        <form action="../../Controller/recebeRegistre.php" method="POST">
+
+            <div class="input-btnVoltar-block">
+                <button>Voltar</button>
+            </div>
+
+            <div class="input-block">
+                <label for="nome">Nome Completo:</label>
+                <input type="text" name="nome" id="nome" placeholder="Exemplo Pereira da Silva">
+            </div>
+
+            <div class="input-block">
+                <label for="cpf">CPF:</label>
+                <input type="text" name="cpf" id="cpf">
+            </div>
+
+            <div class="input-block">
+                <label for="usuario">Usuario:</label>
+                <input type="text" name="usuario" id="usuario" placeholder="user.teste">
+            </div>
+
+            <div class="input-block">
+                <label for="senha">Senha:</label>
+                <input type="password" name="senha" id="senha" placeholder="minhaSenha123">
+            </div>
+
+            <div class="input-radio-block">
+                <input type="radio" name="isAdm" id="isAdm">
+                <label for="isAdm">Administrador</label>
+            </div>
+
+            <div class="input-button-block">
+                <button type="submit" name="btn-salvar" id="btn-salvar">Salvar</button>
+            </div>
+
+        </form>
+    </div>
+</body>
+
+</html>

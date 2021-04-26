@@ -221,6 +221,28 @@ class ControllerBD
         }
     }
 
+    public function cadastrarFuncionario($func)
+    {
+        try {
+            $this->stmt = $this->pdo->prepare(" INSERT INTO Funcionario
+                                                 (
+                                                   nome, cpf,
+                                                   usuario, senha,
+                                                   isAdm
+                                                 )
+                                                 VALUES
+                                                 (
+                                                   ?, ?,
+                                                   ?, ?,
+                                                   ?
+                                                 )          
+                                             ");
+            $this->stmt->execute([$func->nome, $func->cpf, $func->usuario, $func->senha, $func->isAdm]);
+        } catch (PDOException $erro) {
+            echo $erro;
+        }
+    }
+
 
     public function verificaLoginSenha($login, $senha)
     {

@@ -1,0 +1,104 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    background: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-registre{
+    width: 40vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-registre form {
+    width: 60%;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    background-color: rgba(250, 250, 250, 1)
+}
+
+
+.page-registre form .input-block{
+    width: 90%;
+    height: 17%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+.page-registre form .input-block label{
+    font: italic 12pt;
+    margin-bottom: 2px;
+    width: 95%;
+}
+
+.page-registre form .input-block input{
+    width: 90%;
+}
+
+.page-registre .input-btnVoltar-block {
+    display: flex;
+    position: relative;
+    width:100%;
+    height: 5%;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.page-registre .input-btnVoltar-block button {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 90%;
+    left: 7.5%;
+    bottom: 15%;
+    border-radius: 5px;
+    margin: 0%;
+    padding: 0%;
+}
+
+.page-registre form .input-radio-block {
+    width: 90%;
+    height: 8%;
+    display: flex;
+    align-items: center;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+.page-registre form .input-button-block {
+    display: flex;
+    position: relative;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 7.5%;
+    margin-top: 10px;
+}
+
+.page-registre form .input-button-block button {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    width: 25%;
+    border-radius: 5px;
+    left: 7.5%;
+    margin: 0%;
+    padding: 0%;
+}

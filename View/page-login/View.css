@@ -10,69 +10,6 @@ body {
     align-items: center;
 }
 
-/*==========================================================================================*/
-/*==================================PAGINA CADASTRO=========================================*/
-/*==========================================================================================*/
-
-.page-cadastro{
-    width: 50vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.page-cadastro form {
-    width: 60%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 7px;
-    background-color: rgba(250, 250, 250, 1);
-}
-
-.page-cadastro form .input-block{
-    width: 90%;
-    height: 11%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1px;
-    margin-bottom: 1px;
-}
-
-.page-cadastro form .input-block label{
-    font: italic 12pt;
-    margin-bottom: 2px;
-    width: 95%;
-}
-
-.page-cadastro form .input-block input{
-    width: 90%;
-}
-
-.page-cadastro form button {
-    width: 30%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-self: flex-start;
-    margin-left: 7%;
-    margin-top: 2%;
-    border-radius: 10px;
-    background-color: rgba(0, 300, 0, 0.8);
-}
-
-.page-cadastro form button:hover{
-    background-color: rgba(0, 200, 0, 1);
-}
-/*==========================================================================================*/
-/*=================================PAGINA DE LOGIN==========================================*/
-/*==========================================================================================*/
-
 .page-login{
     width: 40vw;
     height: 40vh;
@@ -114,76 +51,34 @@ body {
     width: 90%;
 }
 
-.page-login form button {
+.entrar-registre-block {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.entrar-registre-block button {
     width: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
-    align-self: flex-start;
-    margin-left: 7%;
-    margin-top: 2%;
     border-radius: 10px;
+    position: relative;
+    right: 15%;
     background-color: rgba(0, 300, 0, 0.8);
 }
 
-.page-login form button:hover{
+.entrar-registre-block button:hover{
     background-color: rgba(0, 200, 0, 1);
 }
 
-/*==========================================================================================*/
-/*======================PAGINA LISTA DE CLIENTES============================================*/
-/*==========================================================================================*/
-
-#corpo-tabela {
+.entrar-registre-block a {
+    font-size: 10pt;
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    align-content: center;
-}
-
-.page-lista-cliente {
-    border-color: black;
-    border-left: 5px;
-    border-top: 5px;
-    border-bottom: 5px;
-    border-right: 5px;
-    border-style: solid;
-    width: 90vw;
-    height: 70%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    
-}
-
-.page-lista-cliente thead {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    border-bottom: 4px solid black;
-}
-
-.page-lista-cliente thead tr {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-}
-
-.page-lista-cliente thead tr th {
-    width: 100%;
-    font-size: 12pt;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-right: 1.5px solid black;
-
-}
-
-
-/*==========================================================================================*/
-/*======================PAGINA LISTA DE CLIENTES- bloco de busca ===========================*/
-/*==========================================================================================*/
-
-.page-lista-cliente tbody tr{
-    border: 10px solid black;
+    align-self: center;
+    justify-self: center;
+    position: relative;
+    right: 12%;
 }
