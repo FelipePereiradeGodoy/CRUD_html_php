@@ -11,10 +11,13 @@
         unset($_SESSION['usuarioValido']);
         unset($_SESSION['isAdm']);
         header("Location: https://localhost/CRUD_html_php/View/page-login/login.html");
+    } else {
+        if ($_SESSION['isAdm'] == 1)
+            $adm = 1;
+
+        $idFuncionario = $_SESSION['idFuncionario'];
     }
 
-    if ($_SESSION['isAdm'] == 1)
-        $adm = 1;
     ?>
 
     <meta charset="UTF-8">
@@ -54,7 +57,7 @@
                 <th>Ativo</th>
                 <th>Endereço</th>
                 <th>Editar</th>
-                <th>Excluir</th>
+                <?php if ($adm) echo "<th>Excluir</th>" ?>
             </tr>
         </thead>
         <tbody>
@@ -66,8 +69,13 @@
 
             $control = new ControllerBD;
 
-            $where = '';
-            $control->retornaClientes($where);
+            if ($adm == 1)
+                $where = '';
+            else
+                $where = 'WHERE idFuncionario = ' . $idFuncionario;
+
+
+            $control->retornaClientes($where, $adm);
             ?>
         </tbody>
     </table>

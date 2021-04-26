@@ -1,4 +1,12 @@
 <?php
+session_start();
+
+if ($_SESSION['usuarioValido'] !== 1) {
+    unset($_SESSION['usuarioValido']);
+    unset($_SESSION['isAdm']);
+    header("Location: https://localhost/CRUD_html_php/View/page-login/login.html");
+}
+
 
 $path = $_SERVER['DOCUMENT_ROOT']; //UBUNTU
 require($path . '/CRUD_html_php/Model/ConexaoMysql.php'); //UBUNTU
@@ -71,7 +79,7 @@ class ControllerBD
         }
     }
 
-    public function retornaClientes($where)
+    public function retornaClientes($where, $adm)
     {
         foreach ($this->pdo->query("SELECT * FROM Cliente " . $where) as $row) {
             echo "<tr class='tr-lista-clientes'>";
@@ -87,7 +95,9 @@ class ControllerBD
             echo "<td class='td-lista-clientes'>" . $row['isAtivo'] . "</th>";
             echo "<td class='td-lista-clientes'><button class='btn btn-secondary' id='btnGray' type='button' onclick='pageEndereco($id)'>Loc</button></th>";
             echo "<td class='td-lista-clientes'><button class='btn btn-warning' id='btnAmarelo' type='button' onclick='editarCliente($id)'>Editar</button></th>";
-            echo "<td class='td-lista-clientes'><button class='btn btn-danger' id='btnVermelho' type='button' onclick='excluirCliente($id)'>Excluir</button></th>";
+            if ($adm) {
+                echo "<td class='td-lista-clientes'><button class='btn btn-danger' id='btnVermelho' type='button' onclick='excluirCliente($id)'>Excluir</button></th>";
+            }
             echo "</tr>";
         }
     }
@@ -246,15 +256,16 @@ class ControllerBD
 
     public function verificaLoginSenha($usuario, $senha)
     {
-        foreach ($this->pdo->query(" SELECT senha, isAdm FROM Funcionario
+        foreach ($this->pdo->query(" SELECT senha, isAdm, idFuncionario FROM Funcionario
                                         WHERE usuario IN ('$usuario')") as $row) {
             $verifica = $row['senha'];
             $isAdm = $row['isAdm'];
+            $idFuncionario = $row['idFuncionario'];
         }
         if (password_verify($senha, $verifica)) {
-            return [1, $isAdm];
+            return [1, $isAdm, $idFuncionario];
         } else {
-            return [0, 0];
+            return [0, 0, 0];
         }
     }
 }
