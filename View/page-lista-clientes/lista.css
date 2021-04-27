@@ -61,12 +61,30 @@ nav #plus-block {
     background-color: white  !important;
 }
 
-#btnAzul {
-    background-color:#87CEFA;
+.btn-img {
+    width: 60%;
+    margin: 0%;
+    padding: 0%;
+    display: contents;
 }
 
-#btnAzul:hover{
-    background-color: #00BFFF;
+#img-place {
+    height: 40px;
+    position: relative;
+    left: 15%;
+}
+
+#img-edit {
+    background-color: white;
+    height: 40px;
+    position: relative;
+    left: 5%;
+}
+
+#img-delete {
+    height: 40px;
+    position: relative;
+    left: 15%;
 }
 
 #btnBuscar{

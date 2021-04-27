@@ -68,3 +68,23 @@ nav #plus-block {
   
 }
 
+.btn-img {
+    width: 60%;
+    margin: 0%;
+    padding: 0%;
+    display: contents;
+}
+
+#img-edit {
+    background-color: white;
+    height: 40px;
+    position: relative;
+    left: 4%;
+}
+
+#img-delete {
+    height: 40px;
+    position: relative;
+    left: 7%;
+}
+

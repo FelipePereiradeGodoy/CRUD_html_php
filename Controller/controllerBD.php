@@ -83,10 +83,22 @@ class ControllerBD
             echo "<td class='td-lista-clientes'>" . $row['telefone2'] . "</th>";
             echo "<td class='td-lista-clientes'>" . $row['dataNasc'] . "</th>";
             echo "<td class='td-lista-clientes'>" . $row['isAtivo'] . "</th>";
-            echo "<td class='td-lista-clientes'><button class='btn btn-secondary' id='btnGray' type='button' onclick='pageEndereco($id)'>Loc</button></th>";
-            echo "<td class='td-lista-clientes'><button class='btn btn-warning' id='btnAmarelo' type='button' onclick='editarCliente($id)'>Editar</button></th>";
+            echo "<td class='td-lista-clientes'>
+                    <button class='btn-img' type='button' onclick='pageEndereco($id)'> 
+                        <img id='img-place' src='../../img/place.svg' alt='simbolo de localização'> 
+                    </button>
+                  </th>";
+            echo "<td class='td-lista-clientes'>
+                    <button class='btn-img' type='button' onclick='editarCliente($id)'> 
+                        <img id='img-edit' src='../../img/edit.svg' alt='Icone de editar cliente'> 
+                    </button>
+                  </th>";
             if ($adm) {
-                echo "<td class='td-lista-clientes'><button class='btn btn-danger' id='btnVermelho' type='button' onclick='excluirCliente($id)'>Excluir</button></th>";
+                echo "<td class='td-lista-clientes'>
+                        <button class='btn-img' type='button' onclick='excluirCliente($id)'> 
+                            <img id='img-delete' src='../../img/delete.svg' alt='Icone para excluir cliente'> 
+                        </button>
+                      </th>";
             }
             echo "</tr>";
         }
@@ -166,8 +178,18 @@ class ControllerBD
                 echo "<td class='td-lista-enderecos'>" . $row['bairro'] .     "</th>";
                 echo "<td class='td-lista-enderecos'>" . $row['numero'] .     "</th>";
                 $idCliente = $row['idCliente'];
-                echo "<td class='td-lista-clientes'><button class='btn btn-warning' id='btnAmarelo' type='button' onclick='editarEndereco($idEndereco, $idCliente)'>Editar</button></th>";
-                echo "<td class='td-lista-clientes'><button class='btn btn-danger' id='btnVermelho' type='button' onclick='excluirEndereco($idEndereco, $idCliente)'>Excluir</button></th>";
+                echo "<td class='td-lista-clientes'>
+                        <button class='btn-img' type='button' onclick='editarEndereco($idEndereco, $idCliente)'> 
+                            <img id='img-edit' src='../../img/edit.svg' alt='Icone de editar cliente'> 
+                        </button>
+                      </th>";
+
+                echo "<td class='td-lista-clientes'>
+                        <button class='btn-img' type='button' onclick='excluirEndereco($idEndereco, $idCliente)'> 
+                            <img id='img-delete' src='../../img/delete.svg' alt='Icone para excluir cliente'> 
+                        </button>
+                      </th>";
+
                 echo "</tr>";
             }
         } catch (PDOException $erro) {
