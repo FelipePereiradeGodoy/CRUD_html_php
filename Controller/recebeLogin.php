@@ -5,7 +5,6 @@ session_start();
 $usuario = $_POST['usuario'];
 $senha = $_POST['senha'];
 
-
 $control = new ControllerBD;
 $array_UsuarioValido_isAdm_idFuncionario = $control->verificaLoginSenha($usuario, $senha);
 

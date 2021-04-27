@@ -1,16 +1,60 @@
 nav {
-    background: orange !important;
+    background: rgb(128,128,128) !important;
 }
 
-nav div a {
-    background: #228B22;
-    border-radius:5px;
-    padding: 5px;
-    
+nav #power-block {
+    display: flex;
+    position: relative;
+    height: 100%;
+    width: 3%;
+    justify-content: center;
+    align-items: center;
+    margin: 0%;
+    padding: 0%;
 }
 
-nav div a:hover {
-    background: #32CD32;
+nav #plus-block {
+    display: flex;
+    position: relative;
+    height: 100%;
+    width: 3%;
+    right: 30%;
+    justify-content: center;
+    align-items: center;
+    margin: 0%;
+    padding: 0%;
+}
+
+#imgPower {
+    background-color: rgba(255,0,0, 0.7);
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 90%;
+    border-radius: 50%;
+    border: 2px solid black;
+    padding: 8%;
+}
+
+#imgPower:hover {
+    background-color: rgba(139,0,0,0.5);
+}
+
+#imgPlus {
+    background-color: rgba(0, 300, 0, 0.8);
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 90%;
+    border-radius: 10%;
+}
+
+#imgPlus:hover {
+    background-color: rgba(0, 200, 0, 1);
 }
 
 .table {

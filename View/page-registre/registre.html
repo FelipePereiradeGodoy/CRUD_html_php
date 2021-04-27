@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="registre.css">
+    <script type="text/javascript" src="../../JS/login.js"></script>
 
     <title>Registre-se</title>
 </head>
@@ -15,7 +16,9 @@
         <form action="../../Controller/recebeRegistre.php" method="POST">
 
             <div class="input-btnVoltar-block">
-                <button>Voltar</button>
+                <a href="../../Controller/recebeRegistre.php" onclick="voltarLogin()">
+                    <img id='imgSetaEsquerda' src="../../img/arrow-left-square.svg" alt="Seta indicando para voltar">
+                </a>
             </div>
 
             <div class="input-block">
@@ -39,12 +42,14 @@
             </div>
 
             <div class="input-radio-block">
-                <input type="radio" name="isAdm" id="isAdm">
+                <input type="radio" name="isAdm" id="isAdm" value="0" onclick="setRadioButton()">
                 <label for="isAdm">Administrador</label>
             </div>
 
             <div class="input-button-block">
-                <button type="submit" name="btn-salvar" id="btn-salvar">Salvar</button>
+                <button type="submit">
+                    <img id="imgCheck" src="../../img/check.svg" alt="imagem de check para salvar novo funcionario" />
+                </button>
             </div>
 
         </form>

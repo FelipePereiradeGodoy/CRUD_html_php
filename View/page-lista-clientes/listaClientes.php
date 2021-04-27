@@ -34,7 +34,13 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-orange">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#" onclick="novoCliente()">Novo Cliente</a>
+            <a id="power-block" class="navbar-brand" href="#" onclick="sairDoSistema()">
+                <img id='imgPower' src="../../img/power.svg" alt="imagem de power para botão de sair do sistema">
+            </a>
+
+            <a id="plus-block" class="navbar-brand" href="#" onclick="novoCliente()">
+                <img id="imgPlus" src="../../img/plus-square.svg" alt="imagem de um MAIS para o botão de adiconar novo cliente">
+            </a>
 
             <form class="d-flex" action="../page-busca/busca.php" method="POST">
                 <input class="form-control me-2" id='inputBuscar' name='inputBuscar' type="search" placeholder="Nome do Cliente" aria-label="Search">

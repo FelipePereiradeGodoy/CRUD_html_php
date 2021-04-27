@@ -1,23 +1,21 @@
 
-PAGINA DE CADASTRO DE CLIENTES
-    CENTRALIZAR/ALINHAR OS ITENS DO FORM -- FEITO
-    Adicionar botão de voltar --- FEITO
-
 PAGINA DE LISTA DE CLIENTES
     Adicionar mais filtros para as buscas;
-    Adicionar botão de sair do sistemas;
+    Adicionar img loc
+    Adicionar img editar
+    Adicionar img Deletar
 
-PAGINA DE CADASTRO DE ENDERECO
-    Deixar o form mais bonito
-    Adicionar botao de voltar
 
-PAGINA DE EDITAR CLIENTES
-    Adicionar botao de voltar
-    Centralizar/ALinhar itens do FORM
+PAGINA DE BUSCA 
+    Adicionar função de editar 
+    Adicionar função de Loc
+    Adicionar função de excluir
 
-PAGINA DE CADASTRO DE FUNCIONARIO
-    Substituir botao voltar por Seta Rosa
-    Ajustar Radio button para quando clicado dnv desmarcar
 
-PAGINA DE BUSCA DE CLIENTES
-    Adicionar mais filtros
+VALIDAÇÃO PARA TODAS AS PAGINAS
+    Cadastro de clientes
+    Lista de Clientes
+    cadastro de Endereço
+    Editar Clientes
+    cadastro de Funcionario
+    busca de clientes

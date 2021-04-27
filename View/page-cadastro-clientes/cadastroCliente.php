@@ -98,7 +98,9 @@
             </div>
 
             <div class="input-button-block">
-                <button type="submit" class="btn btn-primary" id="btn-Salvar">Salvar</button>
+                <button type="submit">
+                    <img id="imgCheck" src="../../img/check.svg" alt="imagem de check para salvar novo funcionario" />
+                </button>
             </div>
     </div>
     </form>

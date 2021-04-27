@@ -15,3 +15,7 @@ function pageEndereco(idCliente) {
 function excluirCliente(idCliente) {
     window.location.href = `https://localhost/CRUD_html_php/Controller/excluirCliente.php?idCliente=${idCliente}`;
 }
+
+function sairDoSistema() {
+    window.location.href = "https://localhost/CRUD_html_php/Controller/sairDoSistema.php";
+}

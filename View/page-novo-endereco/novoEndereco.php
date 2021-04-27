@@ -17,6 +17,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="novoEndereco.css">
+    <script type="text/javascript" src="../../JS/endereco.js"></script>
 
     <title>Novo Endereço</title>
 
@@ -26,29 +27,48 @@
 
 </head>
 
-<body id="body-form">
+<body>
 
-    <form action="../../Controller/recebeNovoEndereco.php" method="POST" id="form-block">
+    <div class="page-novo-endereco">
+        <form action="../../Controller/recebeNovoEndereco.php" method="POST" id="form-block">
 
-        <input type="hidden" name="idCliente" id="idCliente" value="<?php echo $id; ?>">
-        <input type="hidden" name="idEndereco" id="idEndereco" value="">
+            <input type="hidden" name="idCliente" id="idCliente" value="<?php echo $id; ?>">
+            <input type="hidden" name="idEndereco" id="idEndereco" value="">
 
-        <label for="cep" class="label-input">CEP:</label>
-        <input type="text" name="cep" id="cep" class="input-label">
+            <div class="input-btnVoltar-block">
+                <a href="#" onclick="voltarListaEndereco(<?php echo $id ?>)">
+                    <img id='imgSetaEsquerda' src="../../img/arrow-left-square.svg" alt="Seta indicando para voltar">
+                </a>
+            </div>
 
-        <label for="rua" class="label-input">Rua:</label>
-        <input type="text" name="rua" id="rua" class="input-label">
+            <div class="input-block">
+                <label for="cep" class="label-input">CEP:</label>
+                <input type="text" name="cep" id="cep" class="input-label">
+            </div>
 
-        <label for="bairro" class="label-input">Bairro</label>
-        <input type="text" name="bairro" id="bairro" class="input-label">
+            <div class="input-block">
+                <label for="rua" class="label-input">Rua:</label>
+                <input type="text" name="rua" id="rua" class="input-label">
+            </div>
 
-        <label for="numero" class="label-input">Número:</label>
-        <input type="number" name="numero" id="numero" class="input-label">
+            <div class="input-block">
+                <label for="bairro" class="label-input">Bairro</label>
+                <input type="text" name="bairro" id="bairro" class="input-label">
+            </div>
 
-        <button type="submit" id="btn-salvar">Salvar</button>
+            <div class="input-block">
+                <label for="numero" class="label-input">Número:</label>
+                <input type="number" name="numero" id="numero" class="input-label">
+            </div>
 
-    </form>
+            <div class="input-button-block">
+                <button type="submit">
+                    <img id="imgCheck" src="../../img/check.svg" alt="imagem de check para salvar novo funcionario" />
+                </button>
+            </div>
 
+        </form>
+    </div>
 </body>
 
 </html>

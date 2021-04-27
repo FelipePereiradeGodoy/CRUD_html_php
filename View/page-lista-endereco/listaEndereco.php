@@ -29,15 +29,17 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-orange">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#" onclick="voltarListaCliente()">
+
+            <input type="hidden" name="idCliente" id="idCliente" value="<?php echo $id ?>">
+
+            <a id="seta-block" class="navbar-brand" href="#" onclick="voltarListaCliente()">
                 <img id='imgSetaEsquerda' src="../../img/arrow-left-square.svg" alt="Seta indicando para voltar">
             </a>
 
+            <a id="plus-block" class="navbar-brand" href="#" onclick="novoEndereco()">
+                <img id="imgPlus" src="../../img/plus-square.svg" alt="imagem de um MAIS para o botão de adiconar novo endereço">
+            </a>
 
-            <input type="hidden" name="idCliente" id="idCliente" value="<?php echo $id ?>">
-            <div id="btn-block">
-                <a class="navbar-brand" href="#" id="btn-novo-endereco" onclick="novoEndereco()">Novo Endereço</a>
-            </div>
         </div>
     </nav>
 

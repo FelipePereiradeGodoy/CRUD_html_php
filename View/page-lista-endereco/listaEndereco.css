@@ -1,26 +1,64 @@
 nav {
-    background: orange !important;
+    background: rgb(128,128,128) !important;
+}
+.table {
+    background-color: white  !important;
 }
 
-nav div a {
-    background-color: none;
-    width: 40px;
+nav #seta-block {
+    display: flex;
+    position: relative;
     height: 100%;
-    margin-left: 5px;
+    width: 3.3%;
+    justify-content: center;
+    align-items: center;
+    margin: 0%;
+    padding: 0%;
+}
+
+nav #plus-block {
+    display: flex;
+    position: relative;
+    height: 100%;
+    width: 3.3%;
+    right: 88%;
+    justify-content: center;
+    align-items: center;
+    margin: 0%;
+    padding: 0%;
 }
 
 #imgSetaEsquerda{
     background-color: DeepPink;
-    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
     height: 100%;
+    width: 86%;
+    border-radius: 10%;
 }
 
 #imgSetaEsquerda:hover{
     background-color: HotPink;
 }
 
+#imgPlus {
+    background-color: rgba(0, 300, 0, 0.8);
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 86%;
+    border-radius: 10%;
+}
+
+#imgPlus:hover {
+    background-color: rgba(0, 200, 0, 1);
+}
+
 #btn-block{
-    background-color:green;
     width: 12%;
     height: 100%;
     border-radius: 5px;
@@ -30,14 +68,3 @@ nav div a {
   
 }
 
-#btn-novo-endereco {
-    width: 100%;
-    height: 100%;
-    margin: 0%;
-    margin-left: 7%;
-}
-
-
-.table {
-    background-color: white  !important;
-}

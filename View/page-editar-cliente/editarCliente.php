@@ -17,6 +17,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../page-cadastro-clientes/cadastroCliente.css">
+    <script type="text/javascript" src="../../JS/buscaCliente.js"></script>
 
     <title>Cadastro Cliente</title>
 
@@ -38,105 +39,88 @@
 
 <body>
 
-    <form id="form-block" action="../../Controller/recebeCadastroCliente.php" method="POST">
-        <div id="form-center">
+    <div class="page-cadastro-cliente">
+        <form id="form-block" action="../../Controller/recebeCadastroCliente.php" method="POST">
+
             <input type="hidden" name="idCliente" id="idCliente" value="<?php echo $id; ?>">
 
-            <div class="row mb-3" id="div-row-mb-3">
+            <div class="input-btnVoltar-block">
+                <a href="#" onclick="voltarListaCliente()">
+                    <img id='imgSetaEsquerda' src="../../img/arrow-left-square.svg" alt="Seta indicando para voltar">
+                </a>
+            </div>
+
+            <div class="input-block">
 
                 <label for="nome">Nome Completo:</label>
-
-                <div class="col-sm-10">
-                    <input type="text" name="nome" id="nome" class="inputText" value="<?php echo $cliente->nome; ?>">
-                </div>
+                <input type="text" name="nome" id="nome" class="inputText" value="<?php echo $cliente->nome; ?>">
 
             </div>
 
-            <div class="row mb-3" id="div-row-mb-3">
+            <div class="input-block">
 
                 <label for="cpf">CPF:</label>
-
-                <div class="col-sm-10">
-                    <input type="text" name="cpf" id="cpf" class="inputText" value="<?php echo $cliente->cpf; ?>">
-                </div>
+                <input type="text" name="cpf" id="cpf" class="inputText" value="<?php echo $cliente->cpf; ?>">
 
             </div>
 
-            <div class="row mb-3" id="div-row-mb-3">
+            <div class="input-block">
 
                 <label for="rg">RG:</label>
-
-                <div class="col-sm-10">
-                    <input type="text" name="rg" id="rg" class="inputText" value=" <?php echo $cliente->rg; ?>">
-                </div>
+                <input type="text" name="rg" id="rg" class="inputText" value=" <?php echo $cliente->rg; ?>">
 
             </div>
 
-            <div class="row mb-3" id="div-row-mb-3">
+            <div class="input-block">
 
                 <label for="email">Email:</label>
-
-                <div class="col-sm-10">
-                    <input type="text" name="email" id="email" class="inputText" value="<?php echo $cliente->email; ?>">
-                </div>
+                <input type="text" name="email" id="email" class="inputText" value="<?php echo $cliente->email; ?>">
 
             </div>
 
-            <div class="row mb-3" id="div-row-mb-3">
+            <div class="input-block">
 
                 <label for="endereco">Endereço:</label>
-
-                <div class="col-sm-10">
-                    <input type="text" name="endereco" id="endereco" class="inputText" value="<?php echo $cliente->endereco; ?>">
-                </div>
+                <input type="text" name="endereco" id="endereco" class="inptText" value="<?php echo $cliente->endereco; ?>">
 
             </div>
 
-            <div class="row mb-3" id="div-row-mb-3">
+            <div class="input-block">
 
                 <label for="telefone1">Telefone 1:</label>
-
-                <div class="col-sm-10">
-                    <input type="text" name="telefone1" id="telefone1" class="inputText" value="<?php echo $cliente->telefone1; ?>">
-                </div>
+                <input type="text" name="telefone1" id="telefone1" class="inputText" value="<?php echo $cliente->telefone1; ?>">
 
             </div>
 
-            <div class="row mb-3" id="div-row-mb-3">
+            <div class="input-block">
 
                 <label for="telefone2">Telefone 2:</label>
-
-                <div class="col-sm-10">
-                    <input type="text" name="telefone2" id="telefone2" class="inputText" value="<?php echo $cliente->telefone2; ?>">
-                </div>
+                <input type="text" name="telefone2" id="telefone2" class="inputText" value="<?php echo $cliente->telefone2; ?>">
 
             </div>
 
-            <div class="row mb-3" id="div-row-mb-3">
+            <div class="input-block">
 
                 <label for="dataNasc">Data Nascimento:</label>
-
-                <div class="col-sm-10">
-                    <input type="date" name="dataNasc" id="dataNasc" value="<?php echo $cliente->dataNasc; ?>">
-                </div>
+                <input type="date" name="dataNasc" id="dataNasc" value="<?php echo $cliente->dataNasc; ?>">
 
             </div>
 
-            <div class="col-sm-10 offset-sm-2" id="div-row-mb-3">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="isAtivo" id="isAtivo" <?php echo $cliente->isAtivo == 1 ? 'checked' : ''; ?>>
-                    <label class="form-check-label" for="gridCheck1">
-                        Cliente Ativo
-                    </label>
-                </div>
+            <div class="input-checkbox-block"">
+                <input class=" form-check-input" type="checkbox" name="isAtivo" id="isAtivo" <?php echo $cliente->isAtivo == 1 ? 'checked' : ''; ?>>
+                <label class="form-check-label" for="gridCheck1">
+                    Cliente Ativo
+                </label>
             </div>
 
-            <div class="row mb-3" id="div-row-mb-3">
-                <button type="submit" class="btn btn-primary" id="btn-Salvar">Salvar</button>
+            <div class="input-button-block">
+                <button type="submit">
+                    <img id="imgCheck" src="../../img/check.svg" alt="imagem de check para salvar novo funcionario" />
+                </button>
             </div>
-        </div>
-    </form>
 
+        </form>
+    </div>
 </body>
 
 </html>

@@ -26,6 +26,39 @@ body {
     background-color: rgba(250, 250, 250, 1);
 }
 
+.page-registre .input-btnVoltar-block {
+    display: flex;
+    position: relative;
+    width:100%;
+    height: 5.5%;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.page-registre .input-btnVoltar-block a {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-top: 0%;
+    padding:0%;
+    left: 7%;
+}
+
+.page-registre .input-btnVoltar-block a img {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-color: DeepPink;
+}
+
+.page-registre .input-btnVoltar-block a img:hover {
+    background-color: HotPink;
+}
+
 
 .page-registre form .input-block{
     width: 90%;
@@ -78,6 +111,7 @@ body {
     align-items: center;
     margin-top: 1px;
     margin-bottom: 1px;
+    margin-left: 4px;
 }
 
 .page-registre form .input-button-block {
@@ -91,14 +125,27 @@ body {
 }
 
 .page-registre form .input-button-block button {
+    background-color: rgba(0, 200, 0, 1);
     display: flex;
     position: relative;
     justify-content: center;
     align-items: center;
-    height: 70%;
+    height: 90%;
     width: 25%;
-    border-radius: 5px;
+    border-radius: 10px;
     left: 7.5%;
     margin: 0%;
+    padding: 0%;
+}
+
+.page-registre form .input-button-block button:hover{
+    background-color: rgba(0, 300, 0, 0.8);
+}
+
+.page-registre form .input-button-block button img {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    border: 0;
     padding: 0%;
 }
