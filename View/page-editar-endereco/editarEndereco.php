@@ -28,6 +28,7 @@
 
     $idCliente = $_GET['idCliente'];
     $idEndereco = $_GET['idEndereco'];
+    $urlAnterior = $_GET['urlAnterior'];
 
     $control = new ControllerBD;
     $end = new Endereco;
@@ -42,12 +43,12 @@
 <body>
     <div class="page-novo-endereco">
         <form action="../../Controller/recebeNovoEndereco.php" method="POST" id="form-block">
-
+            <input type="hidden" name="urlAnterior" id="urlAnterior" value="<?php echo $urlAnterior; ?>">
             <input type="hidden" name="idCliente" id="idCliente" value="<?php echo $end->idCliente; ?>">
             <input type="hidden" name="idEndereco" id="idEndereco" value="<?php echo $end->idEndereco; ?>">
 
             <div class="input-btnVoltar-block">
-                <a href="#" onclick="voltarListaEndereco(<?php echo $idCliente ?>)">
+                <a href="#" onclick="voltarPaginaListaEndereco()">
                     <img id='imgSetaEsquerda' src="../../img/arrow-left-square.svg" alt="Seta indicando para voltar">
                 </a>
             </div>

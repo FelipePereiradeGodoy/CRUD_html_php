@@ -24,14 +24,23 @@
 
     <?php
     $id = $_GET['id'];
+    if (isset($_GET['urlAnterior']))
+        $urlAnterior = $_GET['urlAnterior'];
+    else
+        $urlAnterior = $_SERVER['HTTP_REFERER'];
+
+    $urlAtual = $_SERVER["REQUEST_URI"];
     ?>
 </head>
 
 <body>
+    <input type="hidden" name="urlAnterior" id="urlAnterior" value="<?php echo $urlAnterior; ?>">
+    <input type="hidden" name="urlAtual" id="urlAtual" value="<?php echo $urlAtual; ?>">
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-orange">
         <div class="container-fluid">
 
-            <input type="hidden" name="idCliente" id="idCliente" value="<?php echo $id ?>">
+            <input type="hidden" name="idCliente" id="idCliente" value="<?php echo $id; ?>">
 
             <a id="seta-block" class="navbar-brand" href="#" onclick="voltarPagina()">
                 <img id='imgSetaEsquerda' src="../../img/arrow-left-square.svg" alt="Seta indicando para voltar">

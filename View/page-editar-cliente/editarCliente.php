@@ -26,6 +26,7 @@
     require '../../Controller/controllerBD.php'; //UBUNTU
     include('../../Model/Cliente.php');
 
+    $urlAnterior = $_SERVER['HTTP_REFERER'];
     $id = $_GET['id'];
     $control = new ControllerBD;
     $cliente = new Cliente;
@@ -42,10 +43,11 @@
     <div class="page-cadastro-cliente">
         <form id="form-block" action="../../Controller/recebeCadastroCliente.php" method="POST">
 
+            <input type="hidden" name="urlAnterior" id="urlAnterior" value="<?php echo $urlAnterior; ?>">
             <input type="hidden" name="idCliente" id="idCliente" value="<?php echo $id; ?>">
 
             <div class="input-btnVoltar-block">
-                <a href="#" onclick="voltarListaCliente()">
+                <a href="#" onclick="voltarPagina()">
                     <img id='imgSetaEsquerda' src="../../img/arrow-left-square.svg" alt="Seta indicando para voltar">
                 </a>
             </div>

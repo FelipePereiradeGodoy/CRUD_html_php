@@ -19,6 +19,8 @@
         $idFuncionario = $_SESSION['idFuncionario'];
     }
 
+    $urlAtual = $_SERVER["REQUEST_URI"];
+
     ?>
 
     <meta charset="UTF-8">
@@ -32,6 +34,8 @@
 </head>
 
 <body>
+    <input type="hidden" name="urlAtual" id="urlAtual" value="<?php echo $urlAtual; ?>">
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-orange">
         <div class="container-fluid">
             <a id="power-block" class="navbar-brand" href="#" onclick="sairDoSistema()">
@@ -43,6 +47,7 @@
             </a>
 
             <form class="d-flex" action="../page-busca/busca.php" method="POST">
+                <input type="hidden" name="flagPag" id="flagPag" value="listaClientes">
                 <input class="form-control me-2" id='inputBuscar' name='inputBuscar' type="search" placeholder="Nome do Cliente" aria-label="Search">
                 <button class="btn btn-outline-success" id='btnBuscar' name='btnBuscar' type="submit">Buscar</button>
             </form>

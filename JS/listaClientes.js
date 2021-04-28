@@ -13,7 +13,8 @@ function pageEndereco(idCliente) {
 }
 
 function excluirCliente(idCliente) {
-    window.location.href = `https://localhost/CRUD_html_php/Controller/excluirCliente.php?idCliente=${idCliente}`;
+    let url = document.getElementById('urlAtual').value;
+    window.location.href = `https://localhost/CRUD_html_php/Controller/excluirCliente.php?idCliente=${idCliente}&urlAnterior=${url}`;
 }
 
 function sairDoSistema() {

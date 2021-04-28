@@ -1,20 +1,27 @@
 function novoEndereco() {
     let idCliente = document.getElementById('idCliente').value;
-    window.location.href = `https://localhost/CRUD_html_php/View/page-novo-endereco/novoEndereco.php?id=${idCliente}`; //UBUNTU
+    let url = document.getElementById('urlAnterior').value;
+    window.location.href = `https://localhost/CRUD_html_php/View/page-novo-endereco/novoEndereco.php?id=${idCliente}&urlAnterior=${url}`; //UBUNTU
 }
 
 function editarEndereco(idEndereco, idCliente) {
-    window.location.href = `https://localhost/CRUD_html_php/View/page-editar-endereco/editarEndereco.php?idCliente=${idCliente}&idEndereco=${idEndereco}`;
+    let url = document.getElementById('urlAnterior').value;
+    window.location.href = `https://localhost/CRUD_html_php/View/page-editar-endereco/editarEndereco.php?idCliente=${idCliente}&idEndereco=${idEndereco}&urlAnterior=${url}`;
 }
 
 function excluirEndereco(idEndereco, idCliente) {
-    window.location.href = `https://localhost/CRUD_html_php/Controller/excluirEndereco.php?idCliente=${idCliente}&idEndereco=${idEndereco}`;
+    let urlAtual = document.getElementById('urlAtual').value;
+    let urlAnterior = document.getElementById('urlAnterior').value;
+    window.location.href = `https://localhost/CRUD_html_php/Controller/excluirEndereco.php?idCliente=${idCliente}&idEndereco=${idEndereco}&urlAnterior=${urlAnterior}&urlAtual=${urlAtual}`;
+}
+
+function voltarPaginaListaEndereco() {
+    let id = document.getElementById('idCliente').value;
+    let url = document.getElementById('urlAnterior').value;
+    window.location.href = `https://localhost/CRUD_html_php/View/page-lista-endereco/listaEndereco.php?id=${id}&urlAnterior=${url}`;
 }
 
 function voltarPagina() {
-    window.history.back();
-}
-
-function voltarListaEndereco(id) {
-    window.location.href = `https://localhost/CRUD_html_php/View/page-lista-endereco/listaEndereco.php?id=${id}`;
+    let url = document.getElementById('urlAnterior').value;
+    window.location.href = url;
 }

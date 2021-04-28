@@ -10,9 +10,10 @@ if ($_SESSION['usuarioValido'] !== 1) {
 include('./controllerBD.php');
 
 $idCliente = $_GET['idCliente'];
+$urlAnterior = $_GET['urlAnterior'];
 $control = new controllerBD;
 
 $control->excluirCliente($idCliente);
 
 
-header("Location: https://localhost/CRUD_html_php/View/page-lista-clientes/listaClientes.php");
+header("Location: $urlAnterior");
