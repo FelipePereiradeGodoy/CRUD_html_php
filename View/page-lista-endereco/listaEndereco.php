@@ -5,6 +5,7 @@
     <?php
     session_start();
 
+
     if ($_SESSION['usuarioValido'] !== 1) {
         unset($_SESSION['usuarioValido']);
         unset($_SESSION['isAdm']);
@@ -32,7 +33,7 @@
 
             <input type="hidden" name="idCliente" id="idCliente" value="<?php echo $id ?>">
 
-            <a id="seta-block" class="navbar-brand" href="#" onclick="voltarListaCliente()">
+            <a id="seta-block" class="navbar-brand" href="#" onclick="voltarPagina()">
                 <img id='imgSetaEsquerda' src="../../img/arrow-left-square.svg" alt="Seta indicando para voltar">
             </a>
 

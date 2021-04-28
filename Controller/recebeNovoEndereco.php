@@ -10,7 +10,6 @@ if ($_SESSION['usuarioValido'] !== 1) {
 include('../Model/Endereco.php');
 include('../Controller/controllerBD.php');
 
-
 $end = new Endereco;
 
 $end->idEndereco = $_POST['idEndereco'];

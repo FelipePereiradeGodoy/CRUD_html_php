@@ -7,6 +7,7 @@
     session_start();
     $adm = 0;
 
+
     if ($_SESSION['usuarioValido'] !== 1) {
         unset($_SESSION['usuarioValido']);
         unset($_SESSION['isAdm']);
@@ -31,7 +32,6 @@
 </head>
 
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-orange">
         <div class="container-fluid">
             <a id="power-block" class="navbar-brand" href="#" onclick="sairDoSistema()">

@@ -54,12 +54,12 @@
                 <th>CPF</th>
                 <th>RG</th>
                 <th>Email</th>
-                <th>Endereço</th>
                 <th>Telefone 1</th>
                 <th>Telefone 2</th>
                 <th>Data Nascimento</th>
+                <th>Ativo</th>
+                <th>Endereço</th>
                 <th>Editar</th>
-                <th>Desativar</th>
                 <?php if ($adm) echo "<th>Excluir</th>" ?>
             </tr>
         </thead>

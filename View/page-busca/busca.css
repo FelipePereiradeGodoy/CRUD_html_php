@@ -24,30 +24,30 @@ nav div a {
     background-color: white  !important;
 }
 
-#btnAzul {
-    background-color:#87CEFA;
+.btn-img {
+    width: 60%;
+    margin: 0%;
+    padding: 0%;
+    display: contents;
 }
 
-#btnAzul:hover{
-    background-color: #00BFFF;
+#img-place {
+    height: 40px;
+    position: relative;
+    left: 15%;
 }
 
-#btnAmarelo{
-    background-color:#FFFF00;
+#img-edit {
+    background-color: white;
+    height: 40px;
+    position: relative;
+    left: 6%;
 }
 
-#btnAmarelo:hover{
-    background-color:#FFD700;
+#img-delete {
+    height: 40px;
+    position: relative;
+    left: 10%;
 }
 
-#btnBuscar{
-    background-color:#00FFFF;
-}
 
-#btnBuscar:hover{
-    background-color:#40E0D0;
-}
-
-#btn-editar{
-    text-decoration: none;
-}

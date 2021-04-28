@@ -10,7 +10,6 @@ if ($_SESSION['usuarioValido'] !== 1) {
 include('./controllerBD.php');
 
 $idCliente = $_GET['idCliente'];
-
 $control = new controllerBD;
 
 $control->excluirCliente($idCliente);
