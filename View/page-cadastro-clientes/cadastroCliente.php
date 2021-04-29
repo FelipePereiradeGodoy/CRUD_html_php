@@ -17,10 +17,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="cadastroCliente.css">
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
+
     <script type="text/javascript" src="../../JS/buscaCliente.js"></script>
-    <script type="text/javascript" src="../../JS/mascaras.js"></script>
+    <script type="text/javascript" src="../../JS/validacao.js"></script>
 
 
     <title>Cadastro Cliente</title>
@@ -48,7 +53,7 @@
             <div class="input-block">
 
                 <label for="cpf">CPF:</label>
-                <input type="text" name="cpf" id="cpf" class="inputText" class="form-control cpf-mask" placeholder="Ex.: 000.000.000-00">
+                <input type="text" name="cpf" id="cpf" class="inputText">
 
             </div>
 
@@ -66,7 +71,7 @@
 
             </div>
 
-            <div class="input-block">
+            <div class=" input-block">
 
                 <label for="endereco">Endereço:</label>
                 <input type="text" name="endereco" id="endereco" class="inputText">
@@ -102,7 +107,7 @@
             </div>
 
             <div class="input-button-block">
-                <button type="submit">
+                <button type="submit" id="submit" onclick="dataValida()">
                     <img id="imgCheck" src="../../img/check.svg" alt="imagem de check para salvar novo funcionario" />
                 </button>
             </div>
