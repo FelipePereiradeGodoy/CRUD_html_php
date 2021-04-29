@@ -107,7 +107,7 @@
             </div>
 
             <div class="input-button-block">
-                <button type="submit" id="submit" onclick="dataValida()">
+                <button type="submit" id="submit" onclick="validaForm()">
                     <img id="imgCheck" src="../../img/check.svg" alt="imagem de check para salvar novo funcionario" />
                 </button>
             </div>

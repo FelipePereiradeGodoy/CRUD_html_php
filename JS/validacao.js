@@ -9,18 +9,13 @@ $(document).ready(function () {
 
     $("#nome").focusout(function () {
         let nome = $(this).val();
+        let notValido = contemNumero(nome);
 
-        if (nome == "" || nome == null || nome == undefined) {
+        if (notValido == true) {
             numErros += 1;
-            alert("Campo vazio! Campo Obrigatorio!");
-        } else {
-            let notValido = contemNumero(nome);
-
-            if (notValido == true) {
-                numErros += 1;
-                alert("NOME INVALIDO!");
-            }
+            alert("NOME INVALIDO!");
         }
+
     });
 
     $("#email").focusout(function () {
@@ -49,14 +44,26 @@ function dataValida() {
     data = document.getElementById('dataNasc').value;
 
     if (data == "" || data == null || data == undefined) {
-        alert("data invalida!");
         return false;
     }
 
     if (new Date(data) > new Date()) {
-        alert("Você ainda não nasceu !")
         return false;
     }
 
     return true;
+}
+
+function validaForm() {
+    try {
+        if (nome == "" || nome == null || nome == undefined)
+            throw "Campo vazio! Campo Obrigatorio!";
+
+        if (dataValida() == false)
+            throw "data Invalida";
+
+    }
+    catch (Error) {
+        alert(Error);
+    }
 }
