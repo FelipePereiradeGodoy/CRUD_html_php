@@ -29,6 +29,8 @@
     $id = $_GET['id'];
     $control = new ControllerBD;
     $cliente = new Cliente;
+    $urlVoltar = $_SESSION['urlRetorno'];
+
 
     $where = "WHERE idCliente = " . $id;
     $cliente = $control->retornaUmCliente($where);
@@ -45,7 +47,7 @@
             <input type="hidden" name="idCliente" id="idCliente" value="<?php echo $id; ?>">
 
             <div class="input-btnVoltar-block">
-                <a href="#" onclick="voltarPagina()">
+                <a href="<?php echo $urlVoltar ?>">
                     <img id='imgSetaEsquerda' src="../../img/arrow-left-square.svg" alt="Seta indicando para voltar">
                 </a>
             </div>

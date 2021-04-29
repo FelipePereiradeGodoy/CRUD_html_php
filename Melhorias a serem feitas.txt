@@ -1,8 +1,6 @@
 PAGINA DE LISTA DE CLIENTES
     Adicionar mais filtros para as buscas;
 
-AJustar modificações para editar cliente;
-
 
 VALIDAÇÃO PARA TODAS AS PAGINAS
     Cadastro de clientes

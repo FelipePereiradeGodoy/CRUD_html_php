@@ -15,6 +15,7 @@
             $adm = 1;
 
         $idFuncionario = $_SESSION['idFuncionario'];
+        $_SESSION['urlRetorno'] = "https://localhost/CRUD_html_php/View/page-busca/busca.php";
     }
 
     ?>

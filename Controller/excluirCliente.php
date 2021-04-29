@@ -10,10 +10,10 @@ if ($_SESSION['usuarioValido'] !== 1) {
 include('./controllerBD.php');
 
 $idCliente = $_GET['idCliente'];
-$urlAnterior = $_GET['urlAnterior'];
+
 $control = new controllerBD;
 
 $control->excluirCliente($idCliente);
 
-
-header("Location: $urlAnterior");
+$urlVoltar = $_SESSION['urlRetorno'];
+header("Location: $urlVoltar");

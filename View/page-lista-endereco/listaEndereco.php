@@ -24,12 +24,6 @@
 
     <?php
     $id = $_GET['id'];
-
-    if ($_GET['flag'] == "listaBusca")
-        $_SESSION['urlRetorno'] = "https://localhost/CRUD_html_php/View/page-busca/busca.php";
-    if ($_GET['flag'] == "listaClientes")
-        $_SESSION['urlRetorno'] = "https://localhost/CRUD_html_php/View/page-lista-clientes/listaClientes.php";
-
     $urlVoltar = $_SESSION['urlRetorno'];
 
     ?>
