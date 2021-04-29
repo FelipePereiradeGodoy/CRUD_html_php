@@ -11,13 +11,17 @@
         header("Location: https://localhost/CRUD_html_php/View/page-login/login.html");
     }
 
+    $urlVoltar = $_SESSION['urlRetorno'];
     ?>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="cadastroCliente.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../../JS/buscaCliente.js"></script>
+    <script type="text/javascript" src="../../JS/mascaras.js"></script>
+
 
     <title>Cadastro Cliente</title>
 </head>
@@ -27,7 +31,7 @@
         <form action="../../Controller/recebeCadastroCliente.php" method="POST">
 
             <div class="input-btnVoltar-block">
-                <a href="#" onclick="voltarListaCliente()">
+                <a href="<?php echo $urlVoltar ?>">
                     <img id='imgSetaEsquerda' src="../../img/arrow-left-square.svg" alt="Seta indicando para voltar">
                 </a>
             </div>
@@ -44,7 +48,7 @@
             <div class="input-block">
 
                 <label for="cpf">CPF:</label>
-                <input type="text" name="cpf" id="cpf" class="inputText">
+                <input type="text" name="cpf" id="cpf" class="inputText" class="form-control cpf-mask" placeholder="Ex.: 000.000.000-00">
 
             </div>
 
