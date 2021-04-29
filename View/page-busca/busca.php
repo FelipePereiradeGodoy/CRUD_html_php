@@ -29,7 +29,6 @@
     <script type="text/javascript" src="../../JS/buscaCliente.js"></script>
 
     <?php
-    $urlAtual = $_SERVER["REQUEST_URI"];
     $nome = $_POST['inputBuscar'];
     if ($adm == 1)
         $where = "WHERE nome LIKE '" . $nome . "%'";
@@ -39,11 +38,11 @@
 </head>
 
 <body>
-    <input type="hidden" name="urlAtual" id="urlAtual" value="<?php echo $urlAtual; ?>">
+    <input type="hidden" name="flagPag" id="flagPag" value="listaBusca">
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-orange">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#" onclick="voltarListaCliente()">
+            <a class="navbar-brand" href="https://localhost/CRUD_html_php/View/page-lista-clientes/listaClientes.php">
                 <img id='imgSetaEsquerda' src="../../img/arrow-left-square.svg" alt="Seta indicando para voltar">
             </a>
         </div>
@@ -74,6 +73,7 @@
 
             $control = new ControllerBD;
             $control->retornaClientes($where, $adm);
+
             ?>
         </tbody>
     </table>

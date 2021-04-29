@@ -23,7 +23,7 @@
 
     <?php
     $id = $_GET['id'];
-    $urlAnterior = $_GET['urlAnterior'];
+
     ?>
 
 </head>
@@ -33,12 +33,11 @@
     <div class="page-novo-endereco">
         <form action="../../Controller/recebeNovoEndereco.php" method="POST" id="form-block">
 
-            <input type="hidden" name="urlAnterior" id="urlAnterior" value="<?php echo $urlAnterior; ?>">
             <input type="hidden" name="idCliente" id="idCliente" value="<?php echo $id; ?>">
             <input type="hidden" name="idEndereco" id="idEndereco" value="">
 
             <div class="input-btnVoltar-block">
-                <a href="#" onclick="voltarPaginaListaEndereco()">
+                <a href="https://localhost/CRUD_html_php/View/page-lista-endereco/listaEndereco.php?id=<?php echo $id; ?>">
                     <img id='imgSetaEsquerda' src="../../img/arrow-left-square.svg" alt="Seta indicando para voltar">
                 </a>
             </div>

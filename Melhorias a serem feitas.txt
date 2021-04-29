@@ -1,11 +1,7 @@
 PAGINA DE LISTA DE CLIENTES
     Adicionar mais filtros para as buscas;
 
-
-PAGINA DE BUSCA 
-    Adicionar função de editar 
-    Adicionar função de Loc
-    Adicionar função de excluir
+AJustar modificações para editar cliente;
 
 
 VALIDAÇÃO PARA TODAS AS PAGINAS

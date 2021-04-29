@@ -19,8 +19,6 @@
         $idFuncionario = $_SESSION['idFuncionario'];
     }
 
-    $urlAtual = $_SERVER["REQUEST_URI"];
-
     ?>
 
     <meta charset="UTF-8">
@@ -34,7 +32,7 @@
 </head>
 
 <body>
-    <input type="hidden" name="urlAtual" id="urlAtual" value="<?php echo $urlAtual; ?>">
+    <input type="hidden" name="flagPag" id="flagPag" value="listaClientes">
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-orange">
         <div class="container-fluid">

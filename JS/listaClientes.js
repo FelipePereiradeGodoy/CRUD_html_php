@@ -9,7 +9,8 @@ function editarCliente(idCliente) {
 }
 
 function pageEndereco(idCliente) {
-    window.location.href = `https://localhost/CRUD_html_php/View/page-lista-endereco/listaEndereco.php?id=${idCliente}`; //UBUNTU
+    let flag = document.getElementById('flagPag').value;
+    window.location.href = `https://localhost/CRUD_html_php/View/page-lista-endereco/listaEndereco.php?id=${idCliente}&flag=${flag}`; //UBUNTU
 }
 
 function excluirCliente(idCliente) {
