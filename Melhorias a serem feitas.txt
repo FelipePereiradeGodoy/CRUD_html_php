@@ -1,11 +1,5 @@
-PAGINA DE LISTA DE CLIENTES
-    Adicionar mais filtros para as buscas;
+VALIDAR PATTER DE CEP, RG;
+VALIDAR FORM DE CAMPOS EM BRANCO QUE NAO SAO REQUIRE;
+DESATIVAR CHAMADA AO PHP CASO ESTEJA AO INVALIDO
 
 
-VALIDAÇÃO PARA TODAS AS PAGINAS
-    Cadastro de clientes
-    Lista de Clientes
-    cadastro de Endereço
-    Editar Clientes
-    cadastro de Funcionario
-    busca de clientes
