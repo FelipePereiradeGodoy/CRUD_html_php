@@ -17,6 +17,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="novoEndereco.css">
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
     <script type="text/javascript" src="../../JS/endereco.js"></script>
 
     <title>Novo Endereço</title>
@@ -44,7 +49,7 @@
 
             <div class="input-block">
                 <label for="cep" class="label-input">CEP:</label>
-                <input type="text" name="cep" id="cep" class="input-label">
+                <input type="text" name="cep" id="cep" class="input-label" required="required" pattern="^[0-9]{8}$" />
             </div>
 
             <div class="input-block">
@@ -59,11 +64,11 @@
 
             <div class="input-block">
                 <label for="numero" class="label-input">Número:</label>
-                <input type="number" name="numero" id="numero" class="input-label">
+                <input type="number" name="numero" id="numero" class="input-label" required="required" pattern="^\d+$">
             </div>
 
-            <div class="input-button-block">
-                <button type="submit">
+            <div class=" input-button-block">
+                <button id="btnSalvar" type="submit">
                     <img id="imgCheck" src="../../img/check.svg" alt="imagem de check para salvar novo funcionario" />
                 </button>
             </div>

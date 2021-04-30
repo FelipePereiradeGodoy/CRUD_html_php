@@ -55,7 +55,7 @@
             <div class="input-block">
 
                 <label for="nome">Nome Completo:</label>
-                <input type="text" name="nome" id="nome" class="inputText" value="<?php echo $cliente->nome; ?>">
+                <input type="text" name="nome" id="nome" class="inputText" value="<?php echo $cliente->nome; ?>" pattern="[a-zA-Z\s]+$">
 
             </div>
 
@@ -76,7 +76,7 @@
             <div class="input-block">
 
                 <label for="email">Email:</label>
-                <input type="text" name="email" id="email" class="inputText" value="<?php echo $cliente->email; ?>">
+                <input type="text" name="email" id="email" class="inputText" value="<?php echo $cliente->email; ?>" pattern="^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$">
 
             </div>
 
@@ -90,14 +90,14 @@
             <div class="input-block">
 
                 <label for="telefone1">Telefone 1:</label>
-                <input type="text" name="telefone1" id="telefone1" class="inputText" value="<?php echo $cliente->telefone1; ?>">
+                <input type="text" name="telefone1" id="telefone1" class="inputText" value="<?php echo $cliente->telefone1; ?>" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4}">
 
             </div>
 
             <div class="input-block">
 
                 <label for="telefone2">Telefone 2:</label>
-                <input type="text" name="telefone2" id="telefone2" class="inputText" value="<?php echo $cliente->telefone2; ?>">
+                <input type="text" name="telefone2" id="telefone2" class="inputText" value="<?php echo $cliente->telefone2; ?>" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4}">
 
             </div>
 

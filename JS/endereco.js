@@ -1,3 +1,24 @@
+$(document).ready(function () {
+    let btnSalvar = $("#btnSalvar");
+    let cep = $("#cep");
+
+    cep.mask("00000-000");
+
+    $("#cep").focusout(function () {
+        if (cep.val().length < 9) {
+            alert("cep invalido!");
+        }
+
+    });
+
+    btnSalvar.click(function () {
+
+    })
+
+
+});
+
+
 function novoEndereco() {
     let idCliente = document.getElementById('idCliente').value;
     window.location.href = `https://localhost/CRUD_html_php/View/page-novo-endereco/novoEndereco.php?id=${idCliente}`; //UBUNTU

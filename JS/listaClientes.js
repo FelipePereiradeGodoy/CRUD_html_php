@@ -1,7 +1,17 @@
 $(document).ready(function () {
     let valueFiltro = $("#select-filtro option:selected").val();
     let selectFiltro = $("#select-filtro");
+    let inputBuscar = $("#inputBuscar");
     let btnBuscar = $("#btnBuscar");
+
+    btnBuscar.attr("disabled", true);
+
+    inputBuscar.change(function () {
+        if ($(this).val() !== "")
+            btnBuscar.attr("disabled", false);
+        else
+            btnBuscar.attr("disabled", true);
+    });
 
 
     selectFiltro.change(function () {

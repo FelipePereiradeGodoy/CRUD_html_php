@@ -32,25 +32,25 @@
     <?php
     $valueFiltro = $_POST['filtro'];
     $valueInput = $_POST['inputBuscar'];
-    $campo = "";
+
 
     switch ($valueFiltro) {
         case 0:
-            $campo = "nome";
+            $where = "WHERE nome LIKE '" . $valueInput . "%'";
             break;
         case 1:
-            $campo = "cpf";
+            $where = "WHERE cpf = " . $valueInput;
             break;
         case 2:
-            $campo = "isAtivo";
+            $where = "WHERE isAtivo = '" . $valueInput;
             break;
     }
     //realizar um where para cada CASE!
 
     if ($adm == 1)
-        $where = "WHERE nome LIKE '" . $nome . "%'";
+        $where;
     else
-        $where = "WHERE nome LIKE '" . $nome . "%' AND idFuncionario = " . $idFuncionario;
+        $where = $where . " AND idFuncionario = " . $idFuncionario;
     ?>
 </head>
 

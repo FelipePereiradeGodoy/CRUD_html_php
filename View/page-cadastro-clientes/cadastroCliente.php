@@ -46,14 +46,14 @@
             <div class="input-block">
 
                 <label for="nome">Nome Completo:</label>
-                <input type="text" name="nome" id="nome" class="inputText">
+                <input type="text" name="nome" id="nome" class="inputText" required="required" pattern="[a-zA-Z\s]+$">
 
             </div>
 
             <div class="input-block">
 
                 <label for="cpf">CPF:</label>
-                <input type="text" name="cpf" id="cpf" class="inputText">
+                <input type="text" name="cpf" id="cpf" class="inputText" required="required">
 
             </div>
 
@@ -67,7 +67,7 @@
             <div class="input-block">
 
                 <label for="email">Email:</label>
-                <input type="text" name="email" id="email" class="inputText">
+                <input type="email" name="email" id="email" class="inputText" required="required" pattern="^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$">
 
             </div>
 
@@ -81,21 +81,21 @@
             <div class="input-block">
 
                 <label for="telefone1">Telefone 1:</label>
-                <input type="text" name="telefone1" id="telefone1" class="inputText">
+                <input type="text" name="telefone1" id="telefone1" class="inputText" required="required" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4}">
 
             </div>
 
             <div class="input-block">
 
                 <label for="telefone2">Telefone 2:</label>
-                <input type="text" name="telefone2" id="telefone2" class="inputText">
+                <input type="text" name="telefone2" id="telefone2" class="inputText" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4}">
 
             </div>
 
             <div class="input-block">
 
                 <label for="dataNasc">Data Nascimento:</label>
-                <input type="date" name="dataNasc" id="dataNasc">
+                <input type="date" name="dataNasc" id="dataNasc" required="required">
 
             </div>
 
@@ -107,7 +107,7 @@
             </div>
 
             <div class="input-button-block">
-                <button type="submit" id="submit" onclick="validaForm()">
+                <button type="submit" id="submit">
                     <img id="imgCheck" src="../../img/check.svg" alt="imagem de check para salvar novo funcionario" />
                 </button>
             </div>
