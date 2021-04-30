@@ -1,3 +1,19 @@
+$(document).ready(function () {
+    let valueFiltro = $("#select-filtro option:selected").val();
+    let selectFiltro = $("#select-filtro");
+    let btnBuscar = $("#btnBuscar");
+
+
+    selectFiltro.change(function () {
+        valueFiltro = $(this).select().val();
+    });
+
+    btnBuscar.click(function () {
+        $("#filtro").val(valueFiltro);
+    });
+
+});
+
 function novoCliente() {
     window.location.href = "https://localhost/CRUD_html_php/View/page-cadastro-clientes/cadastroCliente.php";//UBUNTU
 

@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function mascaraCadastroCliente() {
     let numErros = 0;
 
     $("#submit").attr("disabled", false);

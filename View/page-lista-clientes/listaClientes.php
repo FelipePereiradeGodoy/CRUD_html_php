@@ -27,9 +27,13 @@
 
     <title>Lista Clientes</title>
 
-    <script type="text/javascript" src="../../JS/listaClientes.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="lista.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
+    <script type="text/javascript" src="../../JS/listaClientes.js"></script>
 </head>
 
 <body>
@@ -45,13 +49,20 @@
                 <img id="imgPlus" src="../../img/plus-square.svg" alt="imagem de um MAIS para o botão de adiconar novo cliente">
             </a>
 
+            <select id="select-filtro" class="form-select" aria-label="Default select example">
+                <option id="filtroNome" name="filtroNome" value="0" selected>Nome</option>
+                <option id="filtroCpf" name="filtroCpf" value="1">CPF</option>
+                <option id="filtroAtivo" name="filtroAtivo" value="2">Ativo</option>
+            </select>
+
             <form class="d-flex" action="../page-busca/busca.php" method="POST">
+                <input type="hidden" name="filtro" id="filtro" value="-1">
                 <input type="hidden" name="flagPag" id="flagPag" value="listaClientes">
+
                 <input class="form-control me-2" id='inputBuscar' name='inputBuscar' type="search" placeholder="Nome do Cliente" aria-label="Search">
+
                 <button class="btn btn-outline-success" id='btnBuscar' name='btnBuscar' type="submit">Buscar</button>
             </form>
-        </div>
-        </div>
     </nav>
 
     <table class="table">

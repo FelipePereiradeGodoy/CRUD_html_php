@@ -30,7 +30,23 @@
     <script type="text/javascript" src="../../JS/buscaCliente.js"></script>
 
     <?php
-    $nome = $_POST['inputBuscar'];
+    $valueFiltro = $_POST['filtro'];
+    $valueInput = $_POST['inputBuscar'];
+    $campo = "";
+
+    switch ($valueFiltro) {
+        case 0:
+            $campo = "nome";
+            break;
+        case 1:
+            $campo = "cpf";
+            break;
+        case 2:
+            $campo = "isAtivo";
+            break;
+    }
+    //realizar um where para cada CASE!
+
     if ($adm == 1)
         $where = "WHERE nome LIKE '" . $nome . "%'";
     else
