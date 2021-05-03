@@ -4,18 +4,6 @@ $(document).ready(function () {
 
     cep.mask("00000-000");
 
-    $("#cep").focusout(function () {
-        if (cep.val().length < 9) {
-            alert("cep invalido!");
-        }
-
-    });
-
-    btnSalvar.click(function () {
-
-    })
-
-
 });
 
 
