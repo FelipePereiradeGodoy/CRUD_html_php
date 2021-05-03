@@ -56,7 +56,7 @@
             </select>
 
             <form class="d-flex" action="../page-busca/busca.php" method="POST">
-                <input type="hidden" name="filtro" id="filtro" value="-1">
+                <input type="hidden" name="filtro" id="filtro" value="0">
                 <input type="hidden" name="flagPag" id="flagPag" value="listaClientes">
 
                 <input class="form-control me-2" id='inputBuscar' name='inputBuscar' type="text" placeholder="Fulano de tal">

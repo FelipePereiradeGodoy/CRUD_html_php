@@ -34,6 +34,8 @@ $(document).ready(function () {
                 break;
             default:
         }
+
+        $("#filtro").attr("value", valueFiltro);
     });
 
     btnBuscar.click(function () {

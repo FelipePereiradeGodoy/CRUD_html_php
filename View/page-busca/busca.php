@@ -34,16 +34,15 @@
     $valueFiltro = $_POST['filtro'];
     $valueInput = $_POST['inputBuscar'];
 
-
     switch ($valueFiltro) {
         case 0:
             $where = "WHERE nome LIKE '" . $valueInput . "%'";
             break;
         case 1:
-            $where = "WHERE cpf = " . $valueInput;
+            $where = "WHERE cpf = '" . $valueInput . "'";
             break;
         case 2:
-            $where = "WHERE isAtivo = '" . $valueInput;
+            $where = "WHERE isAtivo = " . $valueInput;
             break;
     }
     //realizar um where para cada CASE!
@@ -53,6 +52,7 @@
     else
         $where = $where . " AND idFuncionario = " . $idFuncionario;
     ?>
+
 </head>
 
 <body>
