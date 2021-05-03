@@ -16,6 +16,24 @@ $(document).ready(function () {
 
     selectFiltro.change(function () {
         valueFiltro = $(this).select().val();
+
+        switch (parseInt(valueFiltro)) {
+            case 0:
+                inputBuscar.attr("type", "text");
+                inputBuscar.unmask();
+                inputBuscar.attr("placeholder", "Fulano de tal");
+                break;
+            case 1:
+                inputBuscar.mask("000.000.000-00");
+                inputBuscar.attr("placeholder", "000.000.000-00");
+                break;
+            case 2:
+                inputBuscar.attr("type", "number");
+                inputBuscar.unmask();
+                inputBuscar.attr("placeholder", "0 ou 1");
+                break;
+            default:
+        }
     });
 
     btnBuscar.click(function () {

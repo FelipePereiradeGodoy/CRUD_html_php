@@ -59,7 +59,7 @@
                 <input type="hidden" name="filtro" id="filtro" value="-1">
                 <input type="hidden" name="flagPag" id="flagPag" value="listaClientes">
 
-                <input class="form-control me-2" id='inputBuscar' name='inputBuscar' type="search" placeholder="Nome do Cliente" aria-label="Search">
+                <input class="form-control me-2" id='inputBuscar' name='inputBuscar' type="text" placeholder="Fulano de tal">
 
                 <button class="btn btn-outline-success" id='btnBuscar' name='btnBuscar' type="submit">Buscar</button>
             </form>
