@@ -1,7 +1,7 @@
 body{
    width: 100vw;
    height: 100vh;
-   background: orange;
+   background: rgb(128,128,128) !important;
    display: flex;
    justify-content: center;
    align-items: center;
