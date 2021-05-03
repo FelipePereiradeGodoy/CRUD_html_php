@@ -1,3 +1,7 @@
+$(document).ready(function mascaraCPF() {
+    $("#cpf").mask("000.000.000-00");
+});
+
 function voltarLogin() {
     window.location.href = "https://localhost/CRUD_html_php/View/page-login/login.html";
 }
