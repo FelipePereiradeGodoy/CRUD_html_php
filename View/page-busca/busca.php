@@ -76,7 +76,7 @@
                 <th>Telefone 1</th>
                 <th>Telefone 2</th>
                 <th>Data Nascimento</th>
-                <th>Ativo</th>
+                <th>Status</th>
                 <th>Endereço</th>
                 <th>Editar</th>
                 <?php if ($adm) echo "<th>Excluir</th>" ?>

@@ -71,12 +71,6 @@
 
             </div>
 
-            <div class=" input-block">
-
-                <label for="endereco">Endereço:</label>
-                <input type="text" name="endereco" id="endereco" class="inputText">
-
-            </div>
 
             <div class="input-block">
 

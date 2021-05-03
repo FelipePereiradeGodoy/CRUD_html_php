@@ -82,7 +82,7 @@ class ControllerBD
             echo "<td class='td-lista-clientes'>" . $row['telefone1'] . "</th>";
             echo "<td class='td-lista-clientes'>" . $row['telefone2'] . "</th>";
             echo "<td class='td-lista-clientes'>" . $row['dataNasc'] . "</th>";
-            echo "<td class='td-lista-clientes'>" . $row['isAtivo'] . "</th>";
+            echo "<td class='td-lista-clientes'>" . ($row['isAtivo'] == 1 ? 'Ativo' : 'Não Ativo') . "</th>";
             echo "<td class='td-lista-clientes'>
                     <button class='btn-img' type='button' onclick='pageEndereco($id)'> 
                         <img id='img-place' src='../../img/place.svg' alt='simbolo de localização'> 
