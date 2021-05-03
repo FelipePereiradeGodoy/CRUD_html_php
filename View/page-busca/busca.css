@@ -1,18 +1,25 @@
 nav {
-    background: orange !important;
+    background: rgb(128,128,128) !important;
 }
 
 nav div a {
     background-color: none;
-    width: 40px;
+    width: 2%;
     height: 100%;
+    margin: 0%;
+    padding: 0%;
     margin-left: 5px;
 }
 
 #imgSetaEsquerda{
     background-color: DeepPink;
-    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 105%;
     height: 100%;
+    border-radius: 5px;
 }
 
 #imgSetaEsquerda:hover{
