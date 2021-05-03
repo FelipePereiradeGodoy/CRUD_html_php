@@ -33,7 +33,7 @@
 
 <body>
     <div class="page-cadastro-cliente">
-        <form action="../../Controller/recebeCadastroCliente.php" method="POST">
+        <form id="formCadastroCliente" action="../../Controller/recebeCadastroCliente.php" method="POST">
 
             <div class="input-btnVoltar-block">
                 <a href="<?php echo $urlVoltar ?>">
@@ -53,14 +53,14 @@
             <div class="input-block">
 
                 <label for="cpf">CPF:</label>
-                <input type="text" name="cpf" id="cpf" class="inputText" required="required">
+                <input type="text" name="cpf" id="cpf" class="inputText" required="required" pattern="(\d{3})\.(\d{3})\.(\d{3}).(\d{2})">
 
             </div>
 
             <div class="input-block">
 
                 <label for="rg">RG:</label>
-                <input type="text" name="rg" id="rg" class="inputText">
+                <input type="text" name="rg" id="rg" class="inputText" pattern="(\d{2})\.(\d{3})\.(\d{3}).(\d{1})">
 
             </div>
 
@@ -107,7 +107,7 @@
             </div>
 
             <div class="input-button-block">
-                <button type="submit" id="submit">
+                <button type="submit" id="btn-submit">
                     <img id="imgCheck" src="../../img/check.svg" alt="imagem de check para salvar novo funcionario" />
                 </button>
             </div>

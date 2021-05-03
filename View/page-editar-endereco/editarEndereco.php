@@ -54,7 +54,7 @@
 
             <div class="input-block">
                 <label for="cep" class="label-input">CEP:</label>
-                <input type="text" name="cep" id="cep" class="input-label" value="<?php echo $end->cep; ?>">
+                <input type="text" name="cep" id="cep" class="input-label" value="<?php echo $end->cep; ?>" required="required" pattern="(\d{5}.(\d{3}))">
             </div>
 
             <div class="input-block">
@@ -69,7 +69,7 @@
 
             <div class="input-block">
                 <label for="numero" class="label-input">Número:</label>
-                <input type="number" name="numero" id="numero" class="input-label" value="<?php echo $end->numero; ?>">
+                <input type="number" name="numero" id="numero" class="input-label" value="<?php echo $end->numero; ?>" required="required" pattern="^\d+$">
             </div>
 
             <div class="input-button-block">

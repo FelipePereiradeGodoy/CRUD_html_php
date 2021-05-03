@@ -49,7 +49,7 @@
 
             <div class="input-block">
                 <label for="cep" class="label-input">CEP:</label>
-                <input type="text" name="cep" id="cep" class="input-label" required="required" pattern="^[0-9]{8}$" />
+                <input type="text" name="cep" id="cep" class="input-label" required="required" pattern="(\d{5}.(\d{3}))" />
             </div>
 
             <div class="input-block">

@@ -62,21 +62,21 @@
             <div class="input-block">
 
                 <label for="cpf">CPF:</label>
-                <input type="text" name="cpf" id="cpf" class="inputText" value="<?php echo $cliente->cpf; ?>">
+                <input type="text" name="cpf" id="cpf" class="inputText" value="<?php echo $cliente->cpf; ?>" required="required" pattern="(\d{3})\.(\d{3})\.(\d{3}).(\d{2})">
 
             </div>
 
             <div class="input-block">
 
                 <label for="rg">RG:</label>
-                <input type="text" name="rg" id="rg" class="inputText" value=" <?php echo $cliente->rg; ?>">
+                <input type="text" name="rg" id="rg" class="inputText" value=" <?php echo $cliente->rg; ?>" pattern="(\d{2})\.(\d{3})\.(\d{3}).(\d{1})">
 
             </div>
 
             <div class="input-block">
 
                 <label for="email">Email:</label>
-                <input type="text" name="email" id="email" class="inputText" value="<?php echo $cliente->email; ?>" pattern="^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$">
+                <input type="text" name="email" id="email" class="inputText" value="<?php echo $cliente->email; ?>" required="required" pattern="^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$">
 
             </div>
 
@@ -90,7 +90,7 @@
             <div class="input-block">
 
                 <label for="telefone1">Telefone 1:</label>
-                <input type="text" name="telefone1" id="telefone1" class="inputText" value="<?php echo $cliente->telefone1; ?>" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4}">
+                <input type="text" name="telefone1" id="telefone1" class="inputText" value="<?php echo $cliente->telefone1; ?>" required="required" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4}">
 
             </div>
 
@@ -104,7 +104,7 @@
             <div class="input-block">
 
                 <label for="dataNasc">Data Nascimento:</label>
-                <input type="date" name="dataNasc" id="dataNasc" value="<?php echo $cliente->dataNasc; ?>">
+                <input type="date" name="dataNasc" id="dataNasc" value="<?php echo $cliente->dataNasc; ?>" required="required">
 
             </div>
 
